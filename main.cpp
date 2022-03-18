@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
 #include <stdlib.h> // For EXIT_SUCCESS / EXIT_FAILURE
 #include <assert.h> // For assert()
 

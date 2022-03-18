@@ -9,10 +9,12 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 
 #include "config.h"
 #include "updateCats.h"
+#include "stringCat.h"
 
 //Update Name
 bool updateCatName(int index, char newName []){
