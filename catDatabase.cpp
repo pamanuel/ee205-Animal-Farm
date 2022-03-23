@@ -14,7 +14,7 @@
 int currentcatnum = 0;
 struct cat catdata[MAX_CAT];
 
-bool checkCatNum( const int currentcatnum ){
+bool checkCatNum( int currentcatnum ){
     if (currentcatnum > MAX_CAT) {
         return false;//check size of array
     }

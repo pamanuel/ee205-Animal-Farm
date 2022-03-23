@@ -18,13 +18,13 @@ void deleteCats() {
 
     for (int i = 0; i < MAX_CAT; i++){
         strcpy( catdata[i].name, " " );
-        catdata[i].gender  	 = 0    ;
-        catdata[i].breed   	 = 0    ;
+        catdata[i].gender  	    = UNKNOWN_GENDER;
+        catdata[i].breed   	    = UNKNOWN_BREED;
         catdata[i].isfixed      = false;
         catdata[i].weight       = 0.0  ;
-        catdata[i].collarcolor1 = 0    ;
-        catdata[i].collarcolor2 = 0     ;
-        catdata[i].license      = 0     ;
+        catdata[i].collarcolor1 = BLACK;
+        catdata[i].collarcolor2 = BLACK;
+        catdata[i].license      = 0;
     }
 }
 
@@ -32,12 +32,12 @@ void deleteCat(int index){
     for (int i = 0; i < MAX_CAT; i++){
         if (i == index){
             strcpy( catdata[index].name, " " );
-            catdata[index].gender       = 0    ;
-            catdata[index].breed        = 0    ;
+            catdata[index].gender       = UNKNOWN_GENDER;
+            catdata[index].breed        = UNKNOWN_BREED;
             catdata[index].isfixed      = false;
             catdata[index].weight       = 0.0  ;
-            catdata[index].collarcolor1 = 0    ;
-            catdata[index].collarcolor2 = 0    ;
+            catdata[index].collarcolor1 = BLACK;
+            catdata[index].collarcolor2 = BLACK    ;
             catdata[index].license      = 0    ;
         }
     }

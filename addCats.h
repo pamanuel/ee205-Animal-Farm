@@ -11,10 +11,10 @@
 #pragma once
 #include "catDatabase.h"
 extern bool addCat( const char name[],
-                    const enum Gender gender,
-                    const enum Breed breed,
-                    const bool isfixed,
-                    const float weight,
-                    const enum Color collarcolor1,
-                    const enum Color collarcolor2,
-                    const unsigned long long license);
+                    enum Gender gender,
+                    enum Breed breed,
+                    bool isfixed,
+                    float weight,
+                    enum Color collarcolor1,
+                    enum Color collarcolor2,
+                    unsigned long long license);

@@ -30,13 +30,13 @@ struct cat {
     float        	weight             ;
     enum Color   	collarcolor1	    ;
     enum Color   	collarcolor2       ;
-    unsigned long long license      	   ;
+    unsigned long long license          ;
 };
 
 extern struct cat catdata[MAX_CAT];
 extern int currentcatnum;
 
-bool checkCatNum( const int currentcatnum );
-extern bool checkIndex( const int index );
-extern bool checkWeight( const float weight );
+extern bool checkCatNum( int currentcatnum );
+extern bool checkIndex( int index );
+extern bool checkWeight( float weight );
 extern bool checkName( const char name[] );
