@@ -5,13 +5,12 @@
 /// @file stringCat.cpp
 /// @version 1.0
 ///
-/// @author @Patrick Manuel <pamanuel@hawaii.edu>
+/// @author @Patrick Manuel <@pamanuel@hawaii.edu>
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
 //convert enum index to string
 //gender index to string
-
 #include "stringCat.h"
 
 char* genlis( const enum Gender gen ){
