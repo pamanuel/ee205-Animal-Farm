@@ -11,9 +11,7 @@
 
 //convert enum index to string
 //gender index to string
-#include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
+
 #include "stringCat.h"
 
 char* genlis( const enum Gender gen ){

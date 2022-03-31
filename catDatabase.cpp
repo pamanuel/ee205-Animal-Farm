@@ -11,10 +11,10 @@
 #include "catDatabase.h"
 #include "config.h"
 
-int currentcatnum = 0;
+catNum currentcatnum = 0;
 struct cat catdata[MAX_CAT];
 
-bool checkCatNum( int currentcatnum ){
+bool checkCatNum( catNum currentcatnum ){
     if (currentcatnum > MAX_CAT) {
         return false;//check size of array
     }
@@ -30,7 +30,7 @@ bool checkIndex( const int index ){
     }
     return true;
 }
-bool checkWeight( const float weight ){
+bool checkWeight( const Weight weight ){
     if (weight < 0){
         return false;
     }//check if weight is too light

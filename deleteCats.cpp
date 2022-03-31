@@ -9,11 +9,9 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
-#include <stdbool.h>
+
 #include <string.h>
 #include "deleteCats.h"
-#include "stringCat.h"
 void deleteCats() {
 
     for (int i = 0; i < MAX_CAT; i++){

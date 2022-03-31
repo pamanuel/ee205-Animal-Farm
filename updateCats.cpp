@@ -9,12 +9,11 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
-#include <stdbool.h>
 #include <string.h>
 
 #include "config.h"
 #include "updateCats.h"
-#include "stringCat.h"
+
 
 //Update Name
 bool updateCatName(int index, char newName []){
@@ -40,7 +39,7 @@ bool fixCat(int index){
     return true;
 }
 //Update Weight
-bool updateCatWeight(int index, float newWeight){
+bool updateCatWeight(int index, Weight newWeight){
     if (checkIndex(index) == false){
         fprintf( stderr, "%s: Check cat Index [%d] in the database.\n", PROGRAM_NAME, index ) ;
         return false;
