@@ -15,7 +15,7 @@
 #include "config.h"
 #include "addCats.h"
 
-bool addCat( const char name[], const enum Gender gender, const enum Breed breed, const bool isfixed, const Weight weight, const enum Color collarcolor1, const enum Color collarcolor2, const unsigned long long license){
+bool addCat( const char name[], const enum Gender gender, const enum Breed breed, const bool isfixed, const float weight, const enum Color collarcolor1, const enum Color collarcolor2, const unsigned long long license){
 
     if (checkCatNum(currentcatnum) == false){
         fprintf( stderr, "%s: Check if too many cats[%d] in the database.\n", PROGRAM_NAME, currentcatnum ) ;

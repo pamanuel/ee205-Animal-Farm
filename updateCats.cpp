@@ -39,7 +39,7 @@ bool fixCat(int index){
     return true;
 }
 //Update Weight
-bool updateCatWeight(int index, Weight newWeight){
+bool updateCatWeight(int index, float newWeight){
     if (checkIndex(index) == false){
         fprintf( stderr, "%s: Check cat Index [%d] in the database.\n", PROGRAM_NAME, index ) ;
         return false;

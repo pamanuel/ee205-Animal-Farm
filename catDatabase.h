@@ -21,24 +21,22 @@ enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
 enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
 
-typedef int catNum;
-typedef float Weight;
 struct cat {
 
     char         	name[MAX_CAT_NAMES];
     enum Gender  	gender             ;
     enum Breed   	breed              ;
     bool         	isfixed            ;
-    Weight        	weight             ;
+    float        	weight             ;
     enum Color   	collarcolor1	    ;
     enum Color   	collarcolor2       ;
     unsigned long long license          ;
 };
 
 extern struct cat catdata[MAX_CAT];
-extern catNum currentcatnum;
+extern int currentcatnum;
 
-extern bool checkCatNum( catNum currentcatnum );
+extern bool checkCatNum( int currentcatnum );
 extern bool checkIndex( int index );
-extern bool checkWeight( Weight weight );
+extern bool checkWeight( float weight );
 extern bool checkName( const char name[] );

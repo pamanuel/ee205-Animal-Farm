@@ -14,7 +14,7 @@ extern bool addCat( const char name[],
                     enum Gender gender,
                     enum Breed breed,
                     bool isfixed,
-                    Weight weight,
+                    float weight,
                     enum Color collarcolor1,
                     enum Color collarcolor2,
                     unsigned long long license);
