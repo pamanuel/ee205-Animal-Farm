@@ -9,7 +9,11 @@
 /// @date   09_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
+
 #include "catDatabase.h"
+enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
+enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
+typedef float Weight;
 
 class Cat {
 protected:
@@ -22,7 +26,7 @@ protected:
 public:///constructor and destructor
     Cat();
 
-    Cat(const char* newName, Gender newGender, Breed newBreed, Weight newWeight);
+    Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
 
     virtual ~Cat();
 

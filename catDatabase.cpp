@@ -11,7 +11,7 @@
 #include <cassert>
 #include "catDatabase.h"
 #include "config.h"
-#include "Cat.h"
+
 NumCats currentcatnum = 0;
 Cat* catDataheadptr = nullptr;
 
@@ -42,5 +42,6 @@ bool validateDatabase(){
         assert(pCat->validate());
         pCat = pCat->next;
     }
+    return true;
 }
 

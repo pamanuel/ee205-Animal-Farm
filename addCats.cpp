@@ -18,14 +18,14 @@
 using namespace std;
 
 bool addCat(Cat* newCat){
-    if(!checkCatNum(currentcatnum)){
+    if(!checkCatNum(currentcatnum)){///check size of number of cats in database
         cout << "CatDatabase is full" << endl;
         return false;
     }
     else{
         assert(newCat != nullptr);
-        newCat -> validate();
-        assert(validateDatabase());
+        newCat -> validate();///validate newCat
+        assert(validateDatabase());///make sure database is okay
 
         newCat->next = catDataheadptr;
         catDataheadptr = newCat;

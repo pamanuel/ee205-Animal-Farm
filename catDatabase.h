@@ -17,9 +17,6 @@
 #include <cstring>
 #include "Cat.h"
 
-enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
-enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
-
 
 typedef int NumCats;
 typedef float Weight;

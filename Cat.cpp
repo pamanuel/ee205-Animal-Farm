@@ -17,6 +17,7 @@
 #include "config.h"
 using namespace std;
 
+///clear database
 void Cat::clearData(){
     memset(name, 0, MAX_CAT_NAMES);
     gender = UNKNOWN_GENDER;
@@ -29,12 +30,13 @@ void Cat::clearData(){
 Cat::Cat(){
     clearData();
 }
-
+///constructor
 Cat::Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight):Cat(){
     setName(newName);
     setGender(newGender);
     setBreed(newBreed);
     setWeight(newWeight);
+    assert(validate());
 }
 
 Cat::~Cat() {
