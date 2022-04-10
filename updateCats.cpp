@@ -15,7 +15,7 @@
 #include "updateCats.h"
 
 
-//Update Name
+/*Update Name
 bool updateCatName(int index, char newName []){
     if ( checkIndex(index) == false ){
         fprintf( stderr, "%s: Check cat Index [%d] in the database.\n", PROGRAM_NAME, index ) ;
@@ -82,3 +82,4 @@ bool updatelicense(int index, unsigned long long newlicense){
     catdata[index].license = newlicense;
     return true;
 }
+*/

@@ -12,10 +12,11 @@
 #pragma once
 #include <stdbool.h>
 #include "catDatabase.h"
-
+/*
 extern bool updateCatName(int index, char newName []);
 extern bool fixCat(int index);
 extern bool updateCatWeight(int index, Weight newWeight);
 extern bool updateCatCollar1(int index, enum Color collarcolor1);
 extern bool updateCatCollar2(int index, enum Color collarcolor2);
 extern bool updatelicense(int index, unsigned long long newlicense);
+*/
