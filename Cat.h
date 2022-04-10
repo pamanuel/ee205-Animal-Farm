@@ -15,7 +15,7 @@ enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
 typedef float Weight;
 
-class Cat {
+class Cat{
 protected:
     char name[MAX_CAT_NAMES];
     enum Gender gender;

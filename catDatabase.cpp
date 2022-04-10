@@ -12,6 +12,7 @@
 #include "catDatabase.h"
 #include "config.h"
 
+
 NumCats currentcatnum = 0;
 Cat* catDataheadptr = nullptr;
 
@@ -20,6 +21,7 @@ bool checkCatNum( NumCats currentcatnum ){
         return false;//check size of array
     }
     return true;
+
 }
 bool checkWeight( const Weight weight ){
     if (weight <= 0){

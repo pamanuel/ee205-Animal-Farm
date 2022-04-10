@@ -21,8 +21,9 @@
 typedef int NumCats;
 typedef float Weight;
 
+class Cat;
 extern int currentcatnum;
-extern Cat* catDataheadptr;
+extern Cat* catDataheadptr ;
 
 extern bool checkCatNum(NumCats currentcatnum);
 extern bool checkWeight(Weight weight);
