@@ -19,11 +19,12 @@ void Cat::clearData(){
     weight = 0;
     next = nullptr;
 }
+
 Cat::Cat(){
     clearData();
 }
 
-Cat::Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight): Cat(){
+Cat::Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight):Cat(){
     setName(newName);
     setGender(newGender);
     setBreed(newBreed);
@@ -34,3 +35,28 @@ Cat::~Cat() {
     clearData();
 }
 
+void Cat::setName(const char *newName) {
+    memset(name, 0, MAX_CAT_NAMES);
+    strcpy(name, newName);
+}
+
+char *Cat::getName() {
+    return name;
+}
+
+Weight Cat::getWeight() const {
+    return weight;
+}
+
+Gender Cat::getGender() const {
+    return gender;
+}
+
+Breed Cat::getBreed() const {
+    return breed;
+}
+
+
+bool Cat::isFixed() const {
+    return isfixed;
+}

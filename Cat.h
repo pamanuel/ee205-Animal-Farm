@@ -5,7 +5,7 @@
 /// @file Cat.h
 /// @version 1.0
 ///
-/// @author @Patrick Manuel <pamanuel@hawaii.edu>
+/// @author @Patrick Manuel <@pamanuel@hawaii.edu>
 /// @date   09_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
@@ -19,35 +19,37 @@ protected:
     bool isfixed;
     Weight weight;
 
-public://constructor and deconstructor
+public:///constructor and deconstructor
     Cat();
 
     Cat(const char* newName, Gender newGender, Breed newBreed, Weight newWeight);
 
     virtual ~Cat();
+
 private:
     void clearData();
-public://getters and setters
+public:///getters and setters
     Cat *next;
 
+
     char *getName();
-    void setName(const char setName[]);
+    void setName(const char newName[]);
 
     void fixCat()const;
     bool isFixed() const;
 
-    void setWeight(Weight newWeight)const;
-    void getWeight() const;
+    void setWeight(Weight newWeight);
+    Weight getWeight() const;
 
     Gender getGender() const;
     Breed getBreed() const;
 
-protected://Methods
+protected:///Methods
 public:
     void setBreed(Breed Breed);
     void setGender(Gender newGender);
 
-public://validate
+public:///validate
      bool checkCatNum(NumCats currentcatnum);
      bool checkIndex(int index);
      bool checkWeight(Weight weight);
