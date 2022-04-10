@@ -20,16 +20,6 @@ bool checkCatNum( NumCats currentcatnum ){
     }
     return true;
 }
-
-bool checkIndex( const int index ){
-    if (index <= 0){
-        return false;
-    }//check valid index
-    if (index > MAX_CAT){
-        return false;
-    }
-    return true;
-}
 bool checkWeight( const Weight weight ){
     if (weight < 0){
         return false;

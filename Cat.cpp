@@ -61,7 +61,6 @@ Breed Cat::getBreed() const {
     return breed;
 }
 
-
 bool Cat::isFixed() const {
     return isfixed;
 }
@@ -82,4 +81,15 @@ bool Cat::print() const noexcept {
     FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
     FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
     return true ;
+}
+bool Cat::validate() const noexcept {
+    try {
+        checkName(name);
+        checkWeight(weight);
+    }
+    catch (exception const &e){
+        cout << e.what() << endl;
+        return false;
+    }
+    return true;
 }

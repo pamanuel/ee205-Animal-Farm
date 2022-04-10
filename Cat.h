@@ -35,7 +35,7 @@ public:///getters and setters
     const char* getName()const;
     void setName(const char newName[]);
 
-    void fixCat()const;
+    void fixCat();
     bool isFixed() const;
 
     void setWeight(Weight newWeight);
@@ -49,11 +49,6 @@ public:
     void setBreed(Breed Breed);
     void setGender(Gender newGender);
 
-public:///validate
-     bool checkCatNum(NumCats currentcatnum);
-     bool checkIndex(int index);
-     bool checkWeight(Weight weight);
-     bool checkName(const char* name[]);
 public:
     bool print() const noexcept;
     bool validate() const noexcept;
