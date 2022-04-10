@@ -12,17 +12,19 @@
 
 #include <cstring>
 #include <cassert>
-
+#include <iostream>
 #include "config.h"
 #include "reportCats.h"
 #include "stringCat.h"
 
+using namespace std;
 bool printAllCats( ){
     assert(validateDatabase());
     for ( Cat* pCat = catDataheadptr ; pCat != nullptr ; pCat = pCat->next){
         pCat->print();
     }
     assert(validateDatabase());
+    cout << "All cats printed" << endl;
     return true;
 }
 

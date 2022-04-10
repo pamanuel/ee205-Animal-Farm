@@ -43,7 +43,7 @@ bool deleteCat(Cat* deleteName){
 bool deleteAllCats() {
     while(catDataheadptr != nullptr){
         delete(catDataheadptr);
+        cout << "All cats are deleted" << endl;
     }
-    cout << "All cats are deleted" << endl;
     return true;
 }
