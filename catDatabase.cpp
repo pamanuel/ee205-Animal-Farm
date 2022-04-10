@@ -10,9 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "catDatabase.h"
 #include "config.h"
-
+#include "Cat.h"
 NumCats currentcatnum = 0;
-struct cat catdata[MAX_CAT];
+Cat* catDataheadptr = nullptr;
 
 bool checkCatNum( NumCats currentcatnum ){
     if (currentcatnum > MAX_CAT) {
@@ -43,11 +43,6 @@ bool checkName( const char name[] ){
     if (strlen(name) == 0){
         return false; //check name empty
     }
-    for (int i = 0; i < MAX_CAT; i++){
-        if ( strcmp(catdata[i].name, name) == 0 ){
-            return false;//check for duplicate
-        }
-    }
     return true;
-
 }
+

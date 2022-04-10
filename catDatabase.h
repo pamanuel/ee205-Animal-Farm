@@ -23,22 +23,15 @@ enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
 
 typedef int NumCats;
 typedef float Weight;
-struct cat {
 
-    char         	name[MAX_CAT_NAMES];
-    enum Gender  	gender             ;
-    enum Breed   	breed              ;
-    bool         	isfixed            ;
-    Weight        	weight             ;
-    enum Color   	collarcolor1	    ;
-    enum Color   	collarcolor2       ;
-    unsigned long long license          ;
-};
+    extern int currentcatnum;
+    extern Cat *catDataheadptr;
 
-extern struct cat catdata[MAX_CAT];
-extern int currentcatnum;
+    extern bool checkCatNum(NumCats currentcatnum);
 
-extern bool checkCatNum( NumCats currentcatnum );
-extern bool checkIndex( int index );
-extern bool checkWeight( Weight weight );
-extern bool checkName( const char name[] );
+    extern bool checkIndex(int index);
+
+    extern bool checkWeight(Weight weight);
+
+    extern bool checkName(const char name[]);
+}
