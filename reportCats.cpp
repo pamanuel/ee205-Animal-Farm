@@ -9,21 +9,25 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
+
 #include <string.h>
+#include <cassert>
 
 #include "config.h"
 #include "reportCats.h"
 #include "stringCat.h"
 
 bool printAllCats( ){
+    assert(validateDatabase());
     for ( Cat* pCat = catDataheadptr ; pCat != nullptr ; pCat = pCat->next){
         pCat->print();
-        return true;
     }
+    assert(validateDatabase());
+    return true;
 }
 
 Cat* findCat(char name[MAX_CAT_NAMES]){
+    assert(validateDatabase());
     for (Cat* pCat = catDataheadptr; pCat != nullptr; pCat = pCat->next){
         if ( strcmp(pCat->getName(), name) == 0 ) {
             return pCat;
