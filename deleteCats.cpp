@@ -13,6 +13,8 @@
 #include <iostream>
 #include <cassert>
 #include "deleteCats.h"
+#include "Cat.h"
+
 using namespace std;
 
 bool deleteCat(Cat* deleteName){
