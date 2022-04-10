@@ -14,6 +14,7 @@
 #include <cassert>
 #include "Cat.h"
 #include "stringCat.h"
+#include "config.h"
 using namespace std;
 
 void Cat::clearData(){
@@ -65,6 +66,33 @@ bool Cat::isFixed() const {
     return isfixed;
 }
 
+void Cat::fixCat() {
+    Cat::isfixed = true;
+}
+
+void Cat::setWeight(Weight newWeight) {
+    checkWeight( newWeight );
+    Cat::weight = newWeight;
+}
+
+void Cat::setBreed(Breed newBreed) {
+    if(breed == UNKNOWN_BREED){
+        Cat::breed = newBreed;
+    }
+    else{
+        fprintf(stderr,"%s: Breed is already set",PROGRAM_NAME);
+    }
+}
+
+void Cat::setGender(Gender newGender) {
+    if(gender == UNKNOWN_GENDER){
+        Cat::gender = newGender;
+    }
+    else{
+        fprintf(stderr,"%s: Gender is already set",PROGRAM_NAME);
+    }
+}
+
 /// Format a line for printing the members of a class
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 /// @returns true if everything worked correctly. false if something goes
@@ -93,3 +121,4 @@ bool Cat::validate() const noexcept {
     }
     return true;
 }
+

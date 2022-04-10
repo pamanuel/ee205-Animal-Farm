@@ -19,7 +19,7 @@ protected:
     bool isfixed;
     Weight weight;
 
-public:///constructor and deconstructor
+public:///constructor and destructor
     Cat();
 
     Cat(const char* newName, Gender newGender, Breed newBreed, Weight newWeight);
@@ -46,7 +46,7 @@ public:///getters and setters
 
 protected:///Methods
 public:
-    void setBreed(Breed Breed);
+    void setBreed(Breed newBreed);
     void setGender(Gender newGender);
 
 public:

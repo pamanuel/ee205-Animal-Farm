@@ -21,7 +21,7 @@ bool checkCatNum( NumCats currentcatnum ){
     return true;
 }
 bool checkWeight( const Weight weight ){
-    if (weight < 0){
+    if (weight <= 0){
         return false;
     }//check if weight is too light
     return true;
