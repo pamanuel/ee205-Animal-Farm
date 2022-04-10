@@ -41,7 +41,7 @@ bool checkName( const char name[] ){
 bool validateDatabase(){
     Cat* pCat = catDataheadptr;
     while(pCat != nullptr){
-        assert(pCat->validate());
+        assert(pCat->validate());///validate each cat
         pCat = pCat->next;
     }
     return true;

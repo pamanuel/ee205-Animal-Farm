@@ -31,11 +31,11 @@ public:///constructor and destructor
     virtual ~Cat();
 
 private:
-    void clearData();
-public:///getters and setters
-    Cat *next;
+    void clearData();///zero database
+public:
+    Cat *next;///public variable
 
-
+///getters and setters
     const char* getName()const;
     void setName(const char newName[]);
 
@@ -49,7 +49,7 @@ public:///getters and setters
     Breed getBreed() const;
 
 protected:///Methods
-public:
+public:///breed and gender can't be changed
     void setBreed(Breed newBreed);
     void setGender(Gender newGender);
 

@@ -31,7 +31,7 @@ bool addCat(Cat* newCat){
         catDataheadptr = newCat;
         currentcatnum++;
 
-        newCat->validate();
+        assert(validateDatabase());///make sure database is still okay
 
 
         return true;

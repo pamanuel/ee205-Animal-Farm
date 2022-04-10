@@ -44,10 +44,11 @@ Cat::~Cat() {
 }
 
 void Cat::setName(const char *newName) {
+    checkName(newName);///validate usable name
     memset(name, 0, MAX_CAT_NAMES);
     strcpy(name, newName);
 }
-
+////return characteristics
 const char *Cat::getName() const {
     return name;
 }
@@ -71,6 +72,7 @@ bool Cat::isFixed() const {
 void Cat::fixCat() {
     Cat::isfixed = true;
 }
+///end of returning characteristics
 
 void Cat::setWeight(Weight newWeight) {
     checkWeight( newWeight );

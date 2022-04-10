@@ -16,8 +16,10 @@
 using namespace std;
 
 bool deleteCat(Cat* deleteName){
+    ///make sure valid inputs
     assert(deleteName != nullptr);
     assert(validateDatabase());
+    ///if only 1 cat in the database
     if(deleteName == catDataheadptr){
         catDataheadptr = catDataheadptr->next;
         delete deleteName;
@@ -25,7 +27,7 @@ bool deleteCat(Cat* deleteName){
         assert(validateDatabase());
         return true;
     }
-
+    ///if more than 1 cat in database
     Cat* pCat = catDataheadptr;
     while(pCat != nullptr){
         if (pCat->next == deleteName){
@@ -38,7 +40,7 @@ bool deleteCat(Cat* deleteName){
         pCat = pCat->next;
     }
     assert(validateDatabase());
-    return false;
+    return false;///false bc cat isn't in database
 }
 bool deleteAllCats() {
     while(catDataheadptr != nullptr){

@@ -18,6 +18,7 @@
 #include "stringCat.h"
 
 using namespace std;
+
 bool printAllCats( ){
     assert(validateDatabase());
     for ( Cat* pCat = catDataheadptr ; pCat != nullptr ; pCat = pCat->next){
