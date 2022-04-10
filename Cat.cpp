@@ -12,5 +12,25 @@
 #include "Cat.h"
 
 void Cat::clearData(){
-
+    memset(name, 0, MAX_CAT_NAMES);
+    gender = UNKNOWN_GENDER;
+    breed  = UNKNOWN_BREED;
+    isfixed = false;
+    weight = 0;
+    next = nullptr;
 }
+Cat::Cat(){
+    clearData();
+}
+
+Cat::Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight): Cat(){
+    setName(newName);
+    setGender(newGender);
+    setBreed(newBreed);
+    setWeight(newWeight);
+}
+
+Cat::~Cat() {
+    clearData();
+}
+

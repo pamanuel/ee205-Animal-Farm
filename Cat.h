@@ -8,7 +8,9 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   09_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 #include "catDatabase.h"
+
 class Cat {
 protected:
     char name[MAX_CAT_NAMES];
@@ -20,7 +22,7 @@ protected:
 public://constructor and deconstructor
     Cat();
 
-    Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
+    Cat(const char* newName, Gender newGender, Breed newBreed, Weight newWeight);
 
     virtual ~Cat();
 private:
@@ -30,15 +32,20 @@ public://getters and setters
 
     char *getName();
     void setName(const char setName[]);
+
+    void fixCat()const;
+    bool isFixed() const;
+
+    void setWeight(Weight newWeight)const;
+    void getWeight() const;
+
     Gender getGender() const;
     Breed getBreed() const;
-    bool isFixed() const;
-    void getWeight() const;
 
 protected://Methods
 public:
-    void setWeight(Weight newWeight);
-    void setGender(Gender setGender);
+    void setBreed(Breed Breed);
+    void setGender(Gender newGender);
 
 public://validate
      bool checkCatNum(NumCats currentcatnum);

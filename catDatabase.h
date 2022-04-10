@@ -16,10 +16,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include "Cat.h"
 
 enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
 enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
-enum Color { BLACK, WHITE, RED, BLUE, GREEN, PINK };
+
 
 typedef int NumCats;
 typedef float Weight;
@@ -28,10 +29,6 @@ typedef float Weight;
     extern Cat *catDataheadptr;
 
     extern bool checkCatNum(NumCats currentcatnum);
-
     extern bool checkIndex(int index);
-
     extern bool checkWeight(Weight weight);
-
     extern bool checkName(const char name[]);
-}
