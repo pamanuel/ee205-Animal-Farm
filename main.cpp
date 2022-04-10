@@ -79,7 +79,7 @@
         printf("\n");
         printAllCats() ;
 //	printf("\n");
-	deleteCats() ;
+	deleteAllCats() ;
 //	printf("\n");
 	printAllCats() ;
 //	printf("\n");

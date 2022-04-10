@@ -12,5 +12,6 @@
 #pragma once
 #include "catDatabase.h"
 
-extern void deleteCats();
-extern void deleteCat(int index);
+extern bool deleteAllCats();
+extern bool deleteCat();
+

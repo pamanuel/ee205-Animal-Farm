@@ -10,33 +10,40 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-#include <string.h>
+#include <iostream>
+#include <cassert>
 #include "deleteCats.h"
-void deleteCats() {
+using namespace std;
 
-    for (int i = 0; i < MAX_CAT; i++){
-        strcpy( catdata[i].name, " " );
-        catdata[i].gender  	    = UNKNOWN_GENDER;
-        catdata[i].breed   	    = UNKNOWN_BREED;
-        catdata[i].isfixed      = false;
-        catdata[i].weight       = 0.0  ;
-        catdata[i].collarcolor1 = BLACK;
-        catdata[i].collarcolor2 = BLACK;
-        catdata[i].license      = 0;
+bool deleteCat(Cat* deleteName){
+    assert(deleteName != nullptr);
+    assert(validateDatabase());
+    if(deleteName == catDataheadptr){
+        catDataheadptr = catDataheadptr->next;
+        delete deleteName;
+        currentcatnum--;
+        assert(validateDatabase());
+        return true;
     }
-}
 
-void deleteCat(int index){
-    for (int i = 0; i < MAX_CAT; i++){
-        if (i == index){
-            strcpy( catdata[index].name, " " );
-            catdata[index].gender       = UNKNOWN_GENDER;
-            catdata[index].breed        = UNKNOWN_BREED;
-            catdata[index].isfixed      = false;
-            catdata[index].weight       = 0.0  ;
-            catdata[index].collarcolor1 = BLACK;
-            catdata[index].collarcolor2 = BLACK    ;
-            catdata[index].license      = 0    ;
+    Cat* pCat = catDataheadptr;
+    while(pCat != nullptr){
+        if (pCat->next == deleteName){
+            pCat->next = deleteName->next;
+            delete deleteName;
+            assert(pCat->validate());
+            currentcatnum --;
+            return true;
         }
+        pCat = pCat->next;
     }
+    assert(validateDatabase());
+
+}
+bool deleteAllCats() {
+    while(catDataheadptr != nullptr){
+        delete(catDataheadptr);
+    }
+    cout << "All cats are deleted" << endl;
+    return true;
 }
