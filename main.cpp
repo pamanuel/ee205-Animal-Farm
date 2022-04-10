@@ -138,9 +138,9 @@ int main() {
    }
 #endif
 
-//    printAllCats() ;
+    printAllCats() ;
 
-//    deleteAllCats() ;
+    deleteAllCats() ;
 
     printAllCats() ;
 
