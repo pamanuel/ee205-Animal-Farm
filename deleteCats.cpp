@@ -38,7 +38,7 @@ bool deleteCat(Cat* deleteName){
         pCat = pCat->next;
     }
     assert(validateDatabase());
-
+    return false;
 }
 bool deleteAllCats() {
     while(catDataheadptr != nullptr){

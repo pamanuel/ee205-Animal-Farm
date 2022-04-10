@@ -13,6 +13,5 @@
 #include "catDatabase.h"
 #include "stringCat.h"
 
-extern bool printCat( int index );
-extern void printAllCats( );
-extern int findCat(char name[MAX_CAT_NAMES]);
+extern bool printAllCats( );
+extern Cat* findCat(char name[MAX_CAT_NAMES]);
