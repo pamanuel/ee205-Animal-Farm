@@ -35,4 +35,15 @@ bool checkName( const char name[] ){
     }
     return true;
 }
+bool validateDatabase(){
+    for(Cat* catIndex = catDataheadptr; catIndex != nullptr ; catIndex -> next){
+        if(catIndex->validate() && checkCatNum(currentcatnum)){
+            currentcatnum++;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
 

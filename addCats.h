@@ -10,11 +10,4 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "catDatabase.h"
-extern bool addCat( const char name[],
-                    enum Gender gender,
-                    enum Breed breed,
-                    bool isfixed,
-                    Weight weight,
-                    enum Color collarcolor1,
-                    enum Color collarcolor2,
-                    unsigned long long license);
+extern bool addCat( Cat* newCat);

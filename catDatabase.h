@@ -32,3 +32,4 @@ extern bool checkCatNum(NumCats currentcatnum);
 extern bool checkIndex(int index);
 extern bool checkWeight(Weight weight);
 extern bool checkName(const char name[]);
+extern bool validateDatabase();
