@@ -37,7 +37,7 @@ int main() {
 
 
 
-//#ifdef DEBUG
+#ifdef DEBUG
     {
       // Verify that a cat's default values are set
       Cat testCat = Cat();
@@ -100,10 +100,8 @@ int main() {
 
       assert(testCat.validate());  // The cat should now be valid
       testCat.print() ;
-
-    ///  assert(!isCatInDatabase(&testCat)) ;
    }
-///#endif
+#endif
 
     bool result ;
     result = addCat( new Cat( "Loki", MALE, PERSIAN, 1.0 )) ;
@@ -126,7 +124,7 @@ int main() {
       Cat *bella = findCat("Bella");
       assert(bella != nullptr);
       // Test not finding a cat
-      assert(findCatByName("Bella's not here") == nullptr);
+      assert(findCat("Bella's not here") == nullptr);
 
       // Test deleting a cat...
       assert(deleteCat(bella) == true);
