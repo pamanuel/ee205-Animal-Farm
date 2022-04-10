@@ -34,15 +34,3 @@ char* breedlis( const enum Breed bred ){
     return "NULL";
 }
 
-//same as collarcolor2
-char* colorlis( const enum Color color ){
-    switch (color) {
-        case 0: return "BLACK";
-        case 1: return "WHITE";
-        case 2: return "RED";
-        case 3: return "BLUE";
-        case 4: return "GREEN";
-        case 5: return "PINK";
-    }
-    return "NULL";
-}

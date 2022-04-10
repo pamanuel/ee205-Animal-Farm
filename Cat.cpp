@@ -9,7 +9,12 @@
 /// @date   09_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <iostream>
+#include <iomanip>
+#include <cassert>
 #include "Cat.h"
+#include "stringCat.h"
+using namespace std;
 
 void Cat::clearData(){
     memset(name, 0, MAX_CAT_NAMES);
@@ -40,7 +45,7 @@ void Cat::setName(const char *newName) {
     strcpy(name, newName);
 }
 
-char *Cat::getName() {
+const char *Cat::getName() const {
     return name;
 }
 
@@ -59,4 +64,22 @@ Breed Cat::getBreed() const {
 
 bool Cat::isFixed() const {
     return isfixed;
+}
+
+/// Format a line for printing the members of a class
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+/// @returns true if everything worked correctly. false if something goes
+/// wrong
+bool Cat::print() const noexcept {
+    assert( validate() ) ;
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << genlis( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << breedlis( getBreed() ) << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    return true ;
 }

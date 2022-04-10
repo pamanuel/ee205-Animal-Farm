@@ -13,4 +13,3 @@
 #include "catDatabase.h"
 extern char* genlis( const enum Gender gen);
 extern char* breedlis( const enum Breed  bred );
-extern char* colorlis( const enum Color color);

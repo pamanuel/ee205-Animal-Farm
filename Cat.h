@@ -32,7 +32,7 @@ public:///getters and setters
     Cat *next;
 
 
-    char *getName();
+    const char* getName()const;
     void setName(const char newName[]);
 
     void fixCat()const;
@@ -55,7 +55,7 @@ public:///validate
      bool checkWeight(Weight weight);
      bool checkName(const char* name[]);
 public:
-    bool print() const;
-    bool validate();
+    bool print() const noexcept;
+    bool validate() const noexcept;
 
 };
