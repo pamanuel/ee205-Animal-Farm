@@ -12,11 +12,28 @@
 
 
 #include <cassert>
+#include <iostream>
 #include "config.h"
 #include "addCats.h"
+using namespace std;
 
 bool addCat(Cat* newCat){
-    assert(newCat != nullptr);
-    newCat -> validate();
+    if(!checkCatNum(currentcatnum)){
+        cout << "CatDatabase is full" << endl;
+        return false;
+    }
+    else{
+        assert(newCat != nullptr);
+        newCat -> validate();
+        assert(validateDatabase());
 
+        newCat->next = catDataheadptr;
+        catDataheadptr = newCat;
+        currentcatnum++;
+
+        newCat->validate();
+
+
+        return true;
+    }
 }

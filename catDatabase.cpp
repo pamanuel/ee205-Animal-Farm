@@ -8,6 +8,7 @@
 /// @author @Patrick Manuel <@pamanuel@hawaii.edu>
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <cassert>
 #include "catDatabase.h"
 #include "config.h"
 #include "Cat.h"
@@ -36,14 +37,10 @@ bool checkName( const char name[] ){
     return true;
 }
 bool validateDatabase(){
-    for(Cat* catIndex = catDataheadptr; catIndex != nullptr ; catIndex -> next){
-        if(catIndex->validate() && checkCatNum(currentcatnum)){
-            currentcatnum++;
-            return true;
-        }
-        else{
-            return false;
-        }
+    Cat* pCat = catDataheadptr;
+    while(pCat != nullptr){
+        assert(pCat->validate());
+        pCat = pCat->next;
     }
 }
 
