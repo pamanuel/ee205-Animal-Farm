@@ -13,23 +13,23 @@
 //gender index to string
 #include "stringCat.h"
 
-char* genlis( const enum Gender gen ){
+char* genlist( const enum Gender gen ){
     switch (gen) {
-        case 0: return "UNKNOWN_GENDER";
-        case 1: return "MALE";
-        case 2: return "FEMALE";
+        case UNKNOWN_GENDER: return "UNKNOWN_GENDER";
+        case MALE: return "MALE";
+        case FEMALE: return "FEMALE";
     }
     return "NULL";
 }
 //breed index to string
-char* breedlis( const enum Breed bred ){
+char* breedlist( const enum Breed bred ){
     switch (bred) {
-        case 0: return "UNKNOWN_BREED";
-        case 1: return "MAIN_COON";
-        case 2: return "MANX";
-        case 3: return "SHORTHAIR";
-        case 4: return "PERSIAN";
-        case 5: return "SPHYNX";
+        case UNKNOWN_BREED: return "UNKNOWN_BREED";
+        case MAINE_COON: return "MAIN_COON";
+        case MANX: return "MANX";
+        case SHORTHAIR: return "SHORTHAIR";
+        case PERSIAN: return "PERSIAN";
+        case SPHYNX: return "SPHYNX";
     }
     return "NULL";
 }

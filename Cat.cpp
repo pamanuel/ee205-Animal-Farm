@@ -108,8 +108,8 @@ bool Cat::print() const noexcept {
     cout << left ;
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << genlis( getGender() ) << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << breedlis( getBreed() ) << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << genlist( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << breedlist( getBreed() ) << endl ;
     FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
     FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
     return true ;

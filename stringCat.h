@@ -11,5 +11,5 @@
 
 #pragma once
 #include "catDatabase.h"
-extern char* genlis( const enum Gender gen);
-extern char* breedlis( const enum Breed  bred );
+extern char* genlist( const enum Gender gen);
+extern char* breedlist( const enum Breed  bred );
