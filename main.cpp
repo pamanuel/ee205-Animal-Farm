@@ -137,11 +137,8 @@ int main() {
 #endif
 
     printAllCats() ;
-
     deleteAllCats() ;
-
     printAllCats() ;
-
     cout << "Done with " << PROGRAM_NAME ;
 
     return( EXIT_SUCCESS ) ;

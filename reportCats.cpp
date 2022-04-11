@@ -19,13 +19,17 @@
 
 using namespace std;
 
-bool printAllCats( ){
+bool printAllCats( ) {
     assert(validateDatabase());
-    for ( Cat* pCat = catDataheadptr ; pCat != nullptr ; pCat = pCat->next){
-        pCat->print();
+    if (catDataheadptr == nullptr) {
+        cout << "No cat's in database" << endl;
+    } else {
+        for (Cat *pCat = catDataheadptr; pCat != nullptr; pCat = pCat->next) {
+            pCat->print();
+        }
+        assert(validateDatabase());
+        cout << "All cats printed" << endl;
     }
-    assert(validateDatabase());
-    cout << "All cats printed" << endl;
     return true;
 }
 

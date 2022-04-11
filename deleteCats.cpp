@@ -45,9 +45,15 @@ bool deleteCat(Cat* deleteName){
     return false;///false bc cat isn't in database
 }
 bool deleteAllCats() {
-    while(catDataheadptr != nullptr){
-        delete(catDataheadptr);
-        cout << "All cats are deleted" << endl;
+    Cat* deletedCat = catDataheadptr;
+    Cat* nextCat;
+    while(deletedCat != nullptr){
+        nextCat = deletedCat->next;
+        delete(deletedCat);
+        deletedCat = nextCat;
     }
+    catDataheadptr = nullptr;
+    currentcatnum = 0;
+    cout << "All cats are deleted" << endl;
     return true;
 }
