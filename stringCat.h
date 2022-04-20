@@ -8,8 +8,9 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+/*
 #pragma once
 #include "catDatabase.h"
 extern char* genlist( const enum Gender gen);
 extern char* breedlist( const enum Breed  bred );
+*/

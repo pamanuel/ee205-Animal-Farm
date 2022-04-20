@@ -8,7 +8,7 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+/*
 //convert enum index to string
 //gender index to string
 #include "stringCat.h"
@@ -33,4 +33,4 @@ char* breedlist( const enum Breed bred ){
     }
     return "Invalid Breed";
 }
-
+*/

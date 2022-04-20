@@ -15,6 +15,7 @@
 
 #include <cstdio>
 #include <cstring>
+#include <string>
 #include "Cat.h"
 
 
@@ -27,5 +28,5 @@ extern Cat* catDataheadptr ;
 
 extern bool checkCatNum(NumCats currentcatnum);
 extern bool checkWeight(Weight weight);
-extern bool checkName(const char name[]);
+extern bool checkName(std::string name);
 extern bool validateDatabase();

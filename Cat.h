@@ -17,27 +17,27 @@ typedef float Weight;
 
 class Cat{
 protected:
-    char name[MAX_CAT_NAMES];
+    std::string name;
     enum Gender gender;
-    enum Breed breed;
-    bool isfixed;
-    Weight weight;
+    enum Breed  breed;
+    bool        isfixed;
+    Weight      weight;
 
 public:///constructor and destructor
     Cat();
 
-    Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight);
+    Cat(const std::string& newName, Gender newGender, Breed newBreed, Weight newWeight);
 
     virtual ~Cat();
 
 private:
     void clearData();///zero database
 public:
-    Cat *next;///public variable
+    Cat *next{};///public variable
 
 ///getters and setters
-    const char* getName()const;
-    void setName(const char newName[]);
+    std::string getName()const;
+    void setName(const std::string& newName);
 
     void fixCat();
     bool isFixed() const;

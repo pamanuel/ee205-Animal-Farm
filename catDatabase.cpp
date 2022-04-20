@@ -11,7 +11,9 @@
 #include <cassert>
 #include "catDatabase.h"
 #include "config.h"
+#include <string>
 
+using namespace std;
 
 NumCats currentcatnum = 0;
 Cat* catDataheadptr = nullptr;
@@ -29,12 +31,13 @@ bool checkWeight( const Weight weight ){
     }//check if weight is too light
     return true;
 }
-bool checkName( const char name[] ){
-    if (strlen(name) > MAX_CAT_NAMES - 1) {
-        return false; //check name length
+bool checkName( string name ){
+    if (name.length() <= 0){
+        fprintf(stderr,"%s: No name entered",PROGRAM_NAME);
+        return false;
     }
-    if (strlen(name) == 0){
-        return false; //check name empty
+    if (name.length() >= MAX_CAT_NAMES){
+        fprintf(stderr,"%s: Name too long",PROGRAM_NAME);
     }
     return true;
 }

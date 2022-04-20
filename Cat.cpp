@@ -19,19 +19,19 @@ using namespace std;
 
 ///clear database
 void Cat::clearData(){
-    memset(name, 0, MAX_CAT_NAMES);
-    gender = UNKNOWN_GENDER;
-    breed  = UNKNOWN_BREED;
+    name    = "NULL";
+    gender  = UNKNOWN_GENDER;
+    breed   = UNKNOWN_BREED;
     isfixed = false;
-    weight = 0;
-    next = nullptr;
+    weight  = 0;
+    next    = nullptr;
 }
 
 Cat::Cat(){
     clearData();
 }
 ///constructor
-Cat::Cat(const char* newName, const Gender newGender, const Breed newBreed, const Weight newWeight):Cat(){
+Cat::Cat(const string& newName, const Gender newGender, const Breed newBreed, const Weight newWeight):Cat(){
     setName(newName);
     setGender(newGender);
     setBreed(newBreed);
@@ -43,13 +43,12 @@ Cat::~Cat() {
     clearData();
 }
 
-void Cat::setName(const char *newName) {
+void Cat::setName(const string& newName) {
     checkName(newName);///validate usable name
-    memset(name, 0, MAX_CAT_NAMES);
-    strcpy(name, newName);
+    name = newName;
 }
 ////return characteristics
-const char *Cat::getName() const {
+string Cat::getName() const {
     return name;
 }
 
@@ -108,8 +107,8 @@ bool Cat::print() const noexcept {
     cout << left ;
     cout << boolalpha ;
     FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "gender" ) << genlist( getGender() ) << endl ;
-    FORMAT_LINE( "Cat", "breed" ) << breedlist( getBreed() ) << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << getGender() << endl ;
+    FORMAT_LINE( "Cat", "breed" ) <<  getBreed()  << endl ;
     FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
     FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
     return true ;

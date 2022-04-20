@@ -9,7 +9,6 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <cstring>
 #include <cassert>
 #include <iostream>
 #include "config.h"
@@ -21,7 +20,7 @@ using namespace std;
 bool printAllCats( ) {
     assert(validateDatabase());
     if (catDataheadptr == nullptr) {
-        cout << "No cat's in database" << endl;
+        fprintf(stderr,"%s: No cats in database",PROGRAM_NAME);
     } else {
         for (Cat *pCat = catDataheadptr; pCat != nullptr; pCat = pCat->next) {
             pCat->print();
@@ -32,10 +31,10 @@ bool printAllCats( ) {
     return true;
 }
 
-Cat* findCat(char name[MAX_CAT_NAMES]){
+Cat* findCat(const string& name){
     assert(validateDatabase());
     for (Cat* pCat = catDataheadptr; pCat != nullptr; pCat = pCat->next){
-        if ( strcmp(pCat->getName(), name) == 0 ) {
+        if ((name.compare(pCat->getName())) == 0 ) {
             return pCat;
         }
     }
