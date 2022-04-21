@@ -11,11 +11,14 @@
 #pragma once
 
 #include "catDatabase.h"
-enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
-enum Color { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
-typedef float Weight;
+#include "Weight.h"
+#include "Gender.h"
+#include "Color.h"
 
 class Cat{
+public:
+    static const std::string SPECIES_NAME;
+    static const Weight::t_weight MAX_WEIGHT;
 protected:
     std::string name;
     enum Gender gender;

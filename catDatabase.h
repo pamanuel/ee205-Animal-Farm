@@ -20,7 +20,7 @@
 
 
 typedef int NumCats;
-typedef float Weight;
+
 
 class Cat;
 extern int currentcatnum;

@@ -24,5 +24,27 @@ private:
     Gender gender;
     Weight weight;
 public:
-    Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification, const std::string &newSpecies)
+    Animal(const Weight::t_weight newMaxWeight,
+           const std::string &newClassification,
+           const std::string &newSpecies);
+    Animal(const Gender newGender,
+           const Weight::t_weight newWeight,
+           const Weight::t_weight newMaxWeight,
+           const std::string &newClassification,
+           const std::string &newSpecies);
+public:
+    std::string getKingdom() const noexcept;
+    std::string getClassification() const noexcept;
+    std::string getSpecies() const noexcept;
+    Gender getGender();
+    Weight::t_weight getWeight()const noexcept;
+    void setWeight(const Weight::t_weight newWeight);
+public:
+    virtual std::string speak()const noexcept=0;
+    void dump() const noexcept override;
+    bool validate() const noexcept override;
+    static bool validateClassification(const std::string &checkClassification) noexcept;
+    static bool validateSpecies(const std::string &checkSpecies) noexcept;
+protected:
+    void setGender(const Gender newGender);
 };
