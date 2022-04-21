@@ -31,7 +31,7 @@ Cat::Cat(){
     clearData();
 }
 ///constructor
-Cat::Cat(const string& newName, const Gender newGender, const Breed newBreed, const Weight newWeight):Cat(){
+Cat::Cat(const string& newName, const Gender newGender, const Color newBreed, const Weight newWeight): Cat(){
     setName(newName);
     setGender(newGender);
     setBreed(newBreed);
@@ -60,7 +60,7 @@ Gender Cat::getGender() const {
     return gender;
 }
 
-Breed Cat::getBreed() const {
+Color Cat::getBreed() const {
     return breed;
 }
 
@@ -78,12 +78,12 @@ void Cat::setWeight(Weight newWeight) {
     Cat::weight = newWeight;
 }
 
-void Cat::setBreed(Breed newBreed) {
+void Cat::setBreed(Color newBreed) {
     if(breed == UNKNOWN_BREED){
         Cat::breed = newBreed;
     }
     else{
-        fprintf(stderr,"%s: Breed is already set",PROGRAM_NAME);
+        fprintf(stderr,"%s: Color is already set",PROGRAM_NAME);
     }
 }
 

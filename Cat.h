@@ -12,21 +12,21 @@
 
 #include "catDatabase.h"
 enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
-enum Breed { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
+enum Color { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
 typedef float Weight;
 
 class Cat{
 protected:
     std::string name;
     enum Gender gender;
-    enum Breed  breed;
+    enum Color  breed;
     bool        isfixed;
     Weight      weight;
 
 public:///constructor and destructor
     Cat();
 
-    Cat(const std::string& newName, Gender newGender, Breed newBreed, Weight newWeight);
+    Cat(const std::string& newName, Gender newGender, Color newBreed, Weight newWeight);
 
     virtual ~Cat();
 
@@ -46,11 +46,11 @@ public:
     Weight getWeight() const;
 
     Gender getGender() const;
-    Breed getBreed() const;
+    Color getBreed() const;
 
 protected:///Methods
 public:///breed and gender can't be changed
-    void setBreed(Breed newBreed);
+    void setBreed(Color newBreed);
     void setGender(Gender newGender);
 
 public:

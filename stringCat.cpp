@@ -22,15 +22,15 @@ char* genlist( const enum Gender gen ){
     return "Invalid Gender";
 }
 //breed index to string
-char* breedlist( const enum Breed bred ){
+char* breedlist( const enum Color bred ){
     switch (bred) {
         case 0: return "UNKNOWN_BREED";
         case 1: return "MAIN_COON";
-        case 2: return "MANX";
-        case 3: return "SHORTHAIR";
-        case 4: return "PERSIAN";
-        case 5: return "SPHYNX";
+        case 2: return "RED";
+        case 3: return "BLUE";
+        case 4: return "GREEN";
+        case 5: return "PINK";
     }
-    return "Invalid Breed";
+    return "Invalid Color";
 }
 */
