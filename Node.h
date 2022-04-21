@@ -17,26 +17,12 @@ class Node{
     friend class SinglyLinkedList;
 protected:
     Node* next = nullptr;
-    static bool compareByAddress(const Node *node1, const Node node2);
+    static bool compareByAddress(const Node *node1, const Node *node2);
 
 public:
     virtual void dump()const;
     virtual bool validate() const noexcept;
     virtual bool operator>(const Node &rightSide);
+
 };
 
-bool Node::compareByAddress(const Node *node1, const Node node2) {
-    return false;
-}
-
-void Node::dump() const {
-
-}
-
-bool Node::validate() const noexcept {
-    return false;
-}
-
-bool Node::operator>(const Node &rightSide) {
-    return false;
-}
