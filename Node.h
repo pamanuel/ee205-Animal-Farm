@@ -8,8 +8,35 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include "List.h"
+#include "SinglyLinkedList.h"
+class Node;
 
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_NODE_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_NODE_H
+class Node{
+    friend class List;
+    friend class SinglyLinkedList;
+protected:
+    Node* next = nullptr;
+    static bool compareByAddress(const Node *node1, const Node node2);
 
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_NODE_H
+public:
+    virtual void dump()const;
+    virtual bool validate() const noexcept;
+    virtual bool operator>(const Node &rightSide);
+};
+
+bool Node::compareByAddress(const Node *node1, const Node node2) {
+    return false;
+}
+
+void Node::dump() const {
+
+}
+
+bool Node::validate() const noexcept {
+    return false;
+}
+
+bool Node::operator>(const Node &rightSide) {
+    return false;
+}
