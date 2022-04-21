@@ -27,17 +27,15 @@ protected:
     Weight      weight;
 
 public:///constructor and destructor
-    Cat();
 
-    Cat(const std::string& newName, Gender newGender, Color newBreed, Weight newWeight);
+    Cat(const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName);
 
-    virtual ~Cat();
+    Cat(const Color newColor1, const Gender newGender1, Weight::t_weight newWeight1,
+        const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName, const Color newColor,
+        const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight);
 
-private:
-    void clearData();///zero database
+
 public:
-    Cat *next{};///public variable
-
 ///getters and setters
     std::string getName()const;
     void setName(const std::string& newName);
@@ -46,16 +44,9 @@ public:
     bool isFixed() const;
 
 
-    Gender getGender() const;
-    Color getBreed() const;
-
-protected:///Methods
-public:///breed and gender can't be changed
-    void setBreed(Color newBreed);
-    void setGender(Gender newGender);
-
 public:
-    bool print() const noexcept;
+    void dump() const noexcept override;
     bool validate() const noexcept override;
-
+    std::string speak() const noexcept override;
+    static bool validateName(const std::string &newName);
 };

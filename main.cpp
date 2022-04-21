@@ -104,18 +104,18 @@ int main() {
 #endif
 
     bool result ;
-    result = addCat( new Cat( "Loki", MALE, PERSIAN, 1.0 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
     if( !result ) throw logic_error (PROGRAM_NAME ": addCat() failed" ) ;
-    result = addCat( new Cat( "Milo", MALE, MANX , 1.1 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
-    result = addCat( new Cat( "Bella", FEMALE, MAINE_COON, 1.2 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
-    result = addCat( new Cat( "Kali", FEMALE, SHORTHAIR, 1.3 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
-    result = addCat( new Cat( "Trin", FEMALE, MANX, 1.4 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
-    result = addCat( new Cat( "Chili", MALE, SHORTHAIR, 1.5 )) ;
+    result = addCat(new Cat(0, <#initializer#>, <#initializer#>);
     assert( result ) ;
 
 #ifdef DEBUG
