@@ -8,8 +8,21 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
+#include "Node.h"
+#include <string>
+#include "Gender.h"
+#include "Weight.h"
+class Animal;
 
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_ANIMAL_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_ANIMAL_H
-
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_ANIMAL_H
+class Animal: public Node{
+public:
+    static const std::string KINGDOM_NAME;
+private:
+    std::string species;
+    std::string classification;
+    Gender gender;
+    Weight weight;
+public:
+    Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification, const std::string &newSpecies)
+};

@@ -33,7 +33,7 @@ Weight::Weight() noexcept {
     bHasMax      = false;
     assert(validate());
 }
-Weight::Weight(float newWeight) {
+Weight::Weight(t_weight newWeight) {
     setWeight(newWeight);
     maxWeight    = UNKNOWN_WEIGHT;
     unitOfWeight = POUND;
@@ -49,14 +49,14 @@ Weight::Weight(Weight::UnitOfWeight newUnitOfWeight) noexcept {
     bHasMax      = false;
     assert(validate());
 }
-Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight) {
+Weight::Weight(t_weight newWeight, Weight::UnitOfWeight newUnitOfWeight) {
     setWeight(newWeight, newUnitOfWeight);
     maxWeight    = UNKNOWN_WEIGHT;
     bIsKnown     = true;
     bHasMax      = false;
     assert(validate());
 }
-Weight::Weight(float newWeight, float newMaxWeight) {
+Weight::Weight(t_weight newWeight, t_weight newMaxWeight) {
     setWeight(newWeight);
     setMaxWeight(newMaxWeight);
     unitOfWeight = POUND;
@@ -64,7 +64,7 @@ Weight::Weight(float newWeight, float newMaxWeight) {
     bHasMax      = true;
     assert(validate());
 }
-Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, t_weight newMaxWeight) {
     weight       = UNKNOWN_WEIGHT;
     setMaxWeight(newMaxWeight);
     unitOfWeight = newUnitOfWeight;///redundant but has warning if not included.
@@ -72,7 +72,7 @@ Weight::Weight(Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
     bHasMax      = true;
     assert(validate());
 }
-Weight::Weight(float newWeight, Weight::UnitOfWeight newUnitOfWeight, float newMaxWeight) {
+Weight::Weight(t_weight newWeight, Weight::UnitOfWeight newUnitOfWeight, t_weight newMaxWeight) {
     setWeight(newWeight, newUnitOfWeight);
     setMaxWeight(newMaxWeight);
     bIsKnown     = true;
@@ -100,23 +100,23 @@ float Weight::getMaxWeight() const noexcept {
 Weight::UnitOfWeight Weight::getWeightUnit() const noexcept {
     return unitOfWeight;
 }
-void Weight::setWeight(float newWeight) {
+void Weight::setWeight(t_weight newWeight) {
     assert(isWeightValid(newWeight));
     weight = newWeight;
 }
-void Weight::setWeight(float newWeight, Weight::UnitOfWeight weightUnits) {
+void Weight::setWeight(t_weight newWeight, Weight::UnitOfWeight weightUnits) {
     assert(isWeightValid(newWeight));
     weight = convertWeight(newWeight,Weight::POUND, weightUnits);
     unitOfWeight = weightUnits;
 }
-void Weight::setMaxWeight(float newMaxWeight) {
+void Weight::setMaxWeight(t_weight newMaxWeight) {
     assert(validate());
     maxWeight =  newMaxWeight;
     bHasMax = true;
 }
 
 ///validation///
-bool Weight::isWeightValid(float checkWeight) const noexcept {
+bool Weight::isWeightValid(t_weight checkWeight) const noexcept {
     if(checkWeight <= 0 && checkWeight > Weight::maxWeight){
         cout << "invalid weight" << endl;
         return false;
@@ -140,19 +140,19 @@ bool Weight::validate() const noexcept {
 }
 
 ///conversions///
-float Weight::fromKilogramToPound(float kilogram) noexcept {
+Weight::t_weight Weight::fromKilogramToPound(t_weight kilogram) noexcept {
     return kilogram / KILOS_IN_A_POUND ;
 }
-float Weight::fromPoundToKilogram(float pound) noexcept {
+Weight::t_weight Weight::fromPoundToKilogram(t_weight pound) noexcept {
     return pound * KILOS_IN_A_POUND;
 }
-float Weight::fromSlugToPound(float slug) noexcept {
+Weight::t_weight Weight::fromSlugToPound(t_weight slug) noexcept {
     return slug / SLUGS_IN_A_POUND;
 }
-float Weight::fromPoundToSlug(float pound) noexcept {
+Weight::t_weight Weight::fromPoundToSlug(t_weight pound) noexcept {
     return pound * SLUGS_IN_A_POUND;
 }
-float Weight::convertWeight(float fromWeight, Weight::UnitOfWeight fromUnit, Weight::UnitOfWeight toUnit) noexcept {
+Weight::t_weight Weight::convertWeight(t_weight fromWeight, Weight::UnitOfWeight fromUnit, Weight::UnitOfWeight toUnit) noexcept {
     switch(fromUnit){
         case POUND:
             switch(toUnit){
@@ -200,7 +200,7 @@ bool Weight::operator<(const Weight &rhs_Weight) const {
 
     return lhs_weight <= rhs_weight;
 }
-Weight &Weight::operator+=(float rhs_addToWeight) {
+Weight &Weight::operator+=(t_weight rhs_addToWeight) {
     this->weight += rhs_addToWeight;
     return *this;
 }
