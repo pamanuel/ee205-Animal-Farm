@@ -9,7 +9,29 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_MAMMAL_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_MAMMAL_H
+#pragma once
+#include "Animal.h"
+#include "Node.h"
+#include "Gender.h"
+#include "Weight.h"
+#include "Breed.h"
+#include "Color.h"
 
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_MAMMAL_H
+class Mammal;
+class Mammal: public Animal{
+public:
+    static const std::string MAMMAL_NAME;
+protected:
+    Color color = Color::BLACK;
+
+public:
+    Mammal(const Weight::t_weight newMaxWeight,
+           const std::string &newSpecies);
+    Mammal(const Color newColor,const Gender newGender, Weight::t_weight newWeight,
+           const Weight::t_weight newMaxWeight,
+           const std::string &newSpecies);
+public:
+    Color getColor() const noexcept;
+    void setColor(const Color newColor) noexcept;
+    void dump() const noexcept override;
+};

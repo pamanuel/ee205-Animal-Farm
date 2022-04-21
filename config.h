@@ -12,6 +12,3 @@
 #include "Animal.h"
 #include "Cat.h"
 #define PROGRAM_NAME "Animal Farm 1"
-const std::string Animal::KINGDOM_NAME = "Animalia";
-const std::string Mammal::MAMMAL_NAME = "Mammilian";
-const std::string Cat::SPECIES_NAME = "Felis Catus";

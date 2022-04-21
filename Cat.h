@@ -14,8 +14,8 @@
 #include "Weight.h"
 #include "Gender.h"
 #include "Color.h"
-
-class Cat{
+#include "Mammal.h"
+class Cat: public Mammal{
 public:
     static const std::string SPECIES_NAME;
     static const Weight::t_weight MAX_WEIGHT;
@@ -45,8 +45,6 @@ public:
     void fixCat();
     bool isFixed() const;
 
-    void setWeight(Weight newWeight);
-    Weight getWeight() const;
 
     Gender getGender() const;
     Color getBreed() const;
@@ -58,6 +56,6 @@ public:///breed and gender can't be changed
 
 public:
     bool print() const noexcept;
-    bool validate() const noexcept;
+    bool validate() const noexcept override;
 
 };
