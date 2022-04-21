@@ -13,7 +13,6 @@
 #include <iostream>
 #include "config.h"
 #include "reportCats.h"
-#include "stringCat.h"
 
 using namespace std;
 

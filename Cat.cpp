@@ -13,7 +13,6 @@
 #include <iomanip>
 #include <cassert>
 #include "Cat.h"
-#include "stringCat.h"
 #include "config.h"
 using namespace std;
 
