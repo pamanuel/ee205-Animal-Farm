@@ -39,7 +39,6 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     assert(newNode     != nullptr);
     newNode = new Node();
     currentNode->next = newNode;
-
 }
 
 void SinglyLinkedList::dump() const noexcept {
@@ -47,6 +46,8 @@ void SinglyLinkedList::dump() const noexcept {
 }
 
 bool SinglyLinkedList::validate() const noexcept {
-
+    assert(List::empty());
+    assert(List::size());
+    assert(Node::validate());
     return false;
 }
