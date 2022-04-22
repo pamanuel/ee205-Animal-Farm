@@ -8,6 +8,7 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 #include "List.h"
 #include "SinglyLinkedList.h"
 class Node;
