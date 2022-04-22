@@ -8,8 +8,18 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_SINGLYLINKEDLIST_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_SINGLYLINKEDLIST_H
+#include "List.h"
+#include "Node.h"
+class SinglyLinkedList;
 
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_SINGLYLINKEDLIST_H
+class SinglyLinkedList: public List{
+public:
+    SinglyLinkedList();
+    void push_front(Node *newNode);
+    Node * pop_front() noexcept override;
+    static void insert_after(Node *currentNode, Node *newNode);
+    void dump() const noexcept override;
+    bool validate() const noexcept override;
+};

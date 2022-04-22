@@ -9,6 +9,7 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
+#include "SinglyLinkedList.h"
 #include "Node.h"
 
 class List;

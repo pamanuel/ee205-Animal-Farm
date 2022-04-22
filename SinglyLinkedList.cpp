@@ -8,5 +8,45 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+#include <cassert>
+#include <iomanip>
 #include "SinglyLinkedList.h"
+#include "config.h"
+using namespace std;
+SinglyLinkedList::SinglyLinkedList(){
+    head = nullptr;
+}
+
+void SinglyLinkedList::push_front(Node *newNode) {
+    assert(newNode != nullptr);
+    newNode = new Node;
+    newNode->next = head;
+    head = newNode;
+}
+
+Node *SinglyLinkedList::pop_front() noexcept {
+    if(head == nullptr){
+        return nullptr;
+    }
+    Node* pNode = head;
+    head = head->next;
+    delete pNode;
+    return head;
+}
+
+void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
+    assert(currentNode != nullptr);
+    assert(newNode     != nullptr);
+    newNode = new Node();
+    currentNode->next = newNode;
+
+}
+
+void SinglyLinkedList::dump() const noexcept {
+    FORMAT_LINE_FOR_DUMP("SinglyLinkedList", "this") << this << endl;
+}
+
+bool SinglyLinkedList::validate() const noexcept {
+
+    return false;
+}

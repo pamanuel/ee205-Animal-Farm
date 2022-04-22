@@ -9,23 +9,12 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "Node.h"
+
 #include <iostream>
 #include <iomanip>
+#include "Node.h"
+#include "config.h"
 using namespace std;
-
-#define PRINT_HEADING_FOR_DUMP \
- /* Print =========================================================== */ \
- std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl
-/// Format a line for dumping the members of a class to the console.
-/// Setup the fields for printing (space pad, left justify, etc.)
-#define FORMAT_LINE_FOR_DUMP( className, member ) \
- std::cout << std::setfill( ' ' ) /* Space pad */ \
- << std::left /* Left justify */ \
- << std::boolalpha /* Print `true` or `false` for `bool`s */ \
- << std::setw(8) << (className) \
- << std::setw(20) << (member) \
- << std::setw(52) /* (data) */
 
 bool Node::compareByAddress(const Node *node1, const Node *node2) {
     if(node1 > node2){
