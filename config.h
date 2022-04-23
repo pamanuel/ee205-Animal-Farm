@@ -9,8 +9,6 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "Animal.h"
-#include "Cat.h"
 #define PROGRAM_NAME "Animal Farm 1"
 
 /// Format the heading for dumping members of a class to the console

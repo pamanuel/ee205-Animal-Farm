@@ -8,10 +8,12 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   19_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 
 #include <iostream>
+#include <string>
 #include "config.h"
-enum class Gender;
+
 enum class Gender {
     UNKNOWN_GENDER=0
     ,MALE

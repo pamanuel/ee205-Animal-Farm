@@ -37,7 +37,7 @@ public:
     std::string getKingdom() const noexcept;
     std::string getClassification() const noexcept;
     std::string getSpecies() const noexcept;
-    Gender getGender();
+    Gender getGender() const noexcept;
     Weight::t_weight getWeight()const noexcept;
     void setWeight(const Weight::t_weight newWeight);
 public:

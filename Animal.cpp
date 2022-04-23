@@ -8,9 +8,17 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <cassert>
 
 #include "Animal.h"
+#include "config.h"
+#include "Gender.h"
 
+using namespace std;
+const string Animal::KINGDOM_NAME = "Animalia";
 Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies) {
     classification = newClassification;
     species = newSpecies;
@@ -37,12 +45,12 @@ std::string Animal::getSpecies() const noexcept {
     return species;
 }
 
-Gender Animal::getGender() {
+Gender Animal::getGender() const noexcept{
     return gender;
 }
 
 Weight::t_weight Animal::getWeight() const noexcept {
-    return 0.0;
+    return weight.getWeight();
 }
 
 void Animal::setWeight(const Weight::t_weight newWeight) {
@@ -51,18 +59,26 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 
 void Animal::dump() const noexcept {
     Node::dump();
+    FORMAT_LINE_FOR_DUMP("Animal", "Kingdom") << getKingdom() << endl;
+    FORMAT_LINE_FOR_DUMP("Animal", "Classification") << getClassification() << endl;
+    FORMAT_LINE_FOR_DUMP("Animal", "Species") << getSpecies() << endl;
+    FORMAT_LINE_FOR_DUMP("Animal", "Gender") << getGender() << endl;
+    FORMAT_LINE_FOR_DUMP("Animal", "Weight") << getWeight() << endl;
 }
 
 bool Animal::validate() const noexcept {
-    return Node::validate();
+    assert(validateSpecies(getSpecies()));
+    assert(validateClassification(getClassification()));
+    assert(weight.validate());
+    return true;
 }
 
 bool Animal::validateClassification(const string &checkClassification) noexcept {
-    return false;
+    assert(checkClassification.empty());
 }
 
 bool Animal::validateSpecies(const string &checkSpecies) noexcept {
-    return false;
+    assert(checkSpecies.empty());
 }
 
 void Animal::setGender(const Gender newGender) {
