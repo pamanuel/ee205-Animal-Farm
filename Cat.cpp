@@ -15,12 +15,17 @@
 #include "Cat.h"
 #include "config.h"
 using namespace std;
+
+const string SPECIES_NAME ="Felus Catis";
+const Weight::t_weight MAX_WEIGHT = 40;
 ///constructor
-
-
 void Cat::setName(const string& newName) {
-    checkName(newName);///validate usable name
-    name = newName;
+    if(validateName(newName)) {///validate usable name
+        name = newName;
+    }
+    else{
+        throw std::out_of_range( "No name was entered" );
+    }
 }
 ////return characteristics
 string Cat::getName() const {
@@ -36,25 +41,15 @@ void Cat::fixCat() {
 }
 ///end of returning characteristics
 
-
-/// Format a line for printing the members of a class
-#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
-/// @returns true if everything worked correctly. false if something goes
-/// wrong
 void Cat::dump() const noexcept{
     assert( validate() );
     Mammal::dump();
-    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
-    FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
-    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Cat", "isFixed" ) << isFixed() << endl ;
 }
 bool Cat::validateName(const string &newName) {
     if (newName.length() <= 0){
         fprintf(stderr,"%s: No name entered",PROGRAM_NAME);
-        return false;
-    }
-    if (newName.length() >= MAX_CAT_NAMES){
-        fprintf(stderr,"%s: Name too long",PROGRAM_NAME);
         return false;
     }
     return true;
@@ -71,7 +66,7 @@ bool Cat::validate() const noexcept {
 }
 
 std::string Cat::speak() const noexcept {
-    cout << "Meow" << endl;
+    return "Meow";
 }
 
 
