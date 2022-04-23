@@ -18,21 +18,34 @@
 #include "Gender.h"
 
 using namespace std;
+///constructors///
 const string Animal::KINGDOM_NAME = "Animalia";
 Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies):
         Node(), weight(newMaxWeight){
-    classification = newClassification;
-    species = newSpecies;
+    if(validateClassification(newClassification)&& validateSpecies(newSpecies)){
+        classification = newClassification;
+        species = newSpecies;
+        Animal::validate();
+    }
+    else{
+        throw invalid_argument("You have an empty input.");
+    }
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
                const string &newClassification, const string &newSpecies):Node(), weight(newWeight, newMaxWeight) {
-    gender = newGender;
-    weight = newWeight;
-    classification = newClassification;
-    species = newSpecies;
+    if(validateClassification(newClassification)&& validateSpecies(newSpecies)){
+        gender = newGender;
+        weight.setWeight(newWeight);
+        classification = newClassification;
+        species = newSpecies;
+        Animal::validate();
+    }
+    else{
+        throw invalid_argument("You have an empty input.");
+    }
 }
-
+///getters and setters///
 std::string Animal::getClassification() const noexcept {
     return classification;
 }
@@ -56,7 +69,7 @@ Weight::t_weight Animal::getWeight() const noexcept {
 void Animal::setWeight(const Weight::t_weight newWeight) {
     weight = newWeight;
 }
-
+///public methods
 void Animal::dump() const noexcept {
     Node::dump();
     FORMAT_LINE_FOR_DUMP("Animal", "this") << this << endl;
@@ -81,12 +94,12 @@ bool Animal::validateClassification(const string &checkClassification) noexcept 
 bool Animal::validateSpecies(const string &checkSpecies) noexcept {
     assert(checkSpecies.empty());
 }
-
+///protected method
 void Animal::setGender(const Gender newGender) {
     if(gender == Gender::UNKNOWN_GENDER){
         gender = newGender;
     }
     else{
-        cout << "Can't change a gender" << endl;
+        throw invalid_argument("Already has a set gender");
     }
 }

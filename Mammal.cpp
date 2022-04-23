@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <iomanip>
+#include <cassert>
 #include "Mammal.h"
 #include "config.h"
 using namespace std;
@@ -25,6 +26,7 @@ void Mammal::setColor(const Color newColor) noexcept {
 }
 
 void Mammal::dump() const noexcept {
+    assert(Animal::validate());
     Animal::dump();
     FORMAT_LINE_FOR_DUMP("MAMMAL", "Breed") << color << endl;
 }
