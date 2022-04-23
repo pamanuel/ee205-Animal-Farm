@@ -22,7 +22,7 @@ public:
 protected:
     std::string name;
     enum Gender gender;
-    enum Color  breed;
+    enum Breed  breed;
     bool        isfixed;
     Weight      weight;
 
@@ -30,8 +30,8 @@ public:///constructor and destructor
 
     Cat(const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName);
 
-    Cat(const Color newColor1, const Gender newGender1, Weight::t_weight newWeight1,
-        const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName, const Color newColor,
+    Cat(const Breed newColor1, const Gender newGender1, Weight::t_weight newWeight1,
+        const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName, const Breed newColor,
         const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight);
 
 

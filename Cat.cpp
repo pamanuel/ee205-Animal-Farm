@@ -79,7 +79,7 @@ Cat::Cat(const string &newName) {
     name = newName;
 }
 
-Cat::Cat(const Color newColor1, const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight){
+Cat::Cat(const Breed newColor1, const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight){
     color = newColor1;
     gender = newGender;
     weight = newWeight;

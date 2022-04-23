@@ -22,16 +22,16 @@ class Mammal: public Animal{
 public:
     static const std::string MAMMAL_NAME;
 protected:
-    Color color = Color::BLACK;
+    Breed color = Breed::UNKNOWN_COLOR;
 
 public:
     Mammal(const Weight::t_weight newMaxWeight,
            const std::string &newSpecies);
-    Mammal(const Color newColor,const Gender newGender, Weight::t_weight newWeight,
+    Mammal(const Breed newColor, const Gender newGender, Weight::t_weight newWeight,
            const Weight::t_weight newMaxWeight,
            const std::string &newSpecies);
 public:
-    Color getColor() const noexcept;
-    void setColor(const Color newColor) noexcept;
+    Breed getColor() const noexcept;
+    void setColor(const Breed newColor) noexcept;
     void dump() const noexcept override;
 };

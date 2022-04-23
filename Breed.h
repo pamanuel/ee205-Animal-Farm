@@ -2,7 +2,7 @@
 ///         University of Hawaii, College of Engineering
 /// @brief  ee205_lab_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
 ///
-/// @file Color.h
+/// @file Breed.h
 /// @version 1.0
 ///
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
@@ -12,35 +12,34 @@
 #pragma once
 #include <iostream>
 #include "config.h"
-enum class Color;
-enum class Color {
+enum class Breed{
     UNKNOWN_BREED
-    ,WHITE
-    ,RED
-    ,BLUE
-    ,GREEN
-    ,PINK
+    ,MAINE_COON
+    ,MANX
+    ,SHORTHAIR
+    ,PERSIAN
+    ,SPHYNX
 };
 
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Breed ){
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Breed& rhs_Breed ){
     switch( rhs_Breed ) {
-        case Color::UNKNOWN_BREED:
+        case Breed::UNKNOWN_BREED:
             lhs_stream << "Unknown breed";
             break;
-        case Color::WHITE:
+        case Breed::MAINE_COON:
             lhs_stream << "Maine Coon";
             break;
-        case Color::RED:
+        case Breed::MANX:
             lhs_stream << "Manx";
             break;
-        case Color::BLUE:
+        case Breed::SHORTHAIR:
             lhs_stream << "Shorthair";
             break;
-        case Color::GREEN:
+        case Breed::PERSIAN:
             lhs_stream << "Persian";
             break;
-        case Color::PINK:
-            lhs_stream << "PINK";
+        case Breed::SPHYNX:
+            lhs_stream << "Sphynx";
             break;
         default:
             /// @throw out_of_range If the enum is not mapped to a string.

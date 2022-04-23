@@ -10,3 +10,24 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Mammal.h"
+
+Mammal::Mammal(const Weight::t_weight newMaxWeight, const string &newSpecies) {
+
+}
+
+Mammal::Mammal(const Breed newColor, const Gender newGender, Weight::t_weight newWeight,
+               const Weight::t_weight newMaxWeight, const string &newSpecies) {
+
+}
+
+Breed Mammal::getColor() const noexcept {
+    return Breed::MANX;
+}
+
+void Mammal::setColor(const Breed newColor) noexcept {
+
+}
+
+void Mammal::dump() const noexcept {
+    Animal::dump();
+}
