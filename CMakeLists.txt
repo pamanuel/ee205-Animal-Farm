@@ -4,4 +4,4 @@ project(ee205_lab_08d_animal_farm_1_to_clion)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ee205_lab_08d_animal_farm_1_to_clion main.cpp Weight.cpp Weight.h addCats.h addCats.cpp catDatabase.cpp catDatabase.h deleteCats.cpp deleteCats.h reportCats.cpp reportCats.h Cat.cpp Cat.h Breed.h Color.h Gender.h Mammal.cpp Mammal.h List.cpp List.h SinglyLinkedList.cpp SinglyLinkedList.h Node.h Animal.cpp Animal.h Node.cpp)
+add_executable(ee205_lab_08d_animal_farm_1_to_clion main.cpp Weight.cpp Weight.h Cat.cpp Cat.h Breed.h Color.h Gender.h Mammal.cpp Mammal.h List.cpp List.h SinglyLinkedList.cpp SinglyLinkedList.h Node.h Animal.cpp Animal.h Node.cpp)

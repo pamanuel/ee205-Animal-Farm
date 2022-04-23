@@ -9,8 +9,7 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "List.h"
-#include "SinglyLinkedList.h"
+
 class Node;
 
 class Node{///friends to access protected members///

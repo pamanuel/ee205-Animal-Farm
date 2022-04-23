@@ -14,7 +14,7 @@
 #include "config.h"
 using namespace std;
 SinglyLinkedList::SinglyLinkedList(){
-    head = nullptr;
+    assert(SinglyLinkedList::validate());
 }
 
 void SinglyLinkedList::push_front(Node *newNode) {

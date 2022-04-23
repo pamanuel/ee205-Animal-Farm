@@ -9,16 +9,14 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-
-#include "List.h"
 #include "Node.h"
-class SinglyLinkedList;
+#include "List.h"
 
 class SinglyLinkedList: public List{
 public:
     SinglyLinkedList();
     void push_front(Node *newNode);
-    Node * pop_front() noexcept override;
+    Node* pop_front() noexcept override;
     static void insert_after(Node *currentNode, Node *newNode);
     void dump() const noexcept override;
     bool validate() const noexcept override;

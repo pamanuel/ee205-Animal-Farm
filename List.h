@@ -9,10 +9,7 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "SinglyLinkedList.h"
 #include "Node.h"
-
-class List;
 
 class List{
 protected:
@@ -25,6 +22,7 @@ public:
     bool          isSorted() const noexcept;
     Node*         get_first()const noexcept;
     void          deleteAllNodes() noexcept;
+public:
     virtual Node* pop_front() noexcept=0;
     virtual void  dump()const noexcept=0;
     virtual bool  validate() const noexcept=0;
