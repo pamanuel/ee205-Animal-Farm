@@ -8,25 +8,37 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   19_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
+
 #include <iostream>
+#include <string>
 #include "config.h"
-using namespace std;
-enum class Color{
-    UNKNOWN_COLOR
+
+/// Color class enumeration
+enum class Color {
+    UNKNOWN_COLOR=0
     ,BLACK
+    ,BROWN
     ,WHITE
     ,RED
     ,BLUE
     ,GREEN
-    ,PINK
-};
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Color ){
+    ,GINGER
+    ,CREAM
+    ,CINNAMON
+    ,CALICO
+} ;
+
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Color ) {
     switch( rhs_Color ) {
         case Color::UNKNOWN_COLOR:
-            lhs_stream << "Unknown Creed";
+            lhs_stream << "Unknown color";
             break;
         case Color::BLACK:
             lhs_stream << "Black";
+            break;
+        case Color::BROWN:
+            lhs_stream << "Brown";
             break;
         case Color::WHITE:
             lhs_stream << "White";
@@ -40,12 +52,20 @@ inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Colo
         case Color::GREEN:
             lhs_stream << "Green";
             break;
-        case Color::PINK:
-            lhs_stream << "Pink";
+        case Color::GINGER:
+            lhs_stream << "Ginger";
+            break;
+        case Color::CREAM:
+            lhs_stream << "Cream";
+            break;
+        case Color::CINNAMON:
+            lhs_stream << "Cinnamon";
+            break;
+        case Color::CALICO:
+            lhs_stream << "Calico";
             break;
         default:
-            /// @throw out_of_range If the enum is not mapped to a string.
-            throw std::out_of_range( PROGRAM_NAME ": Breed not mapped to a string" );
+            throw std::out_of_range( PROGRAM_NAME ": Color not mapped to a string" );
     }
     return lhs_stream;
 }
