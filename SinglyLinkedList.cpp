@@ -18,34 +18,45 @@ SinglyLinkedList::SinglyLinkedList(){
 }
 
 void SinglyLinkedList::push_front(Node *newNode) {
-    assert(newNode != nullptr);
-    newNode = new Node;
-    newNode->next = head;
-    head = newNode;
+    if(head == nullptr){
+        newNode = head;
+        newNode->next = nullptr;
+    }
+    else{
+        newNode->next = head;
+        head = newNode;
+    }
 }
 
 Node *SinglyLinkedList::pop_front() noexcept {
     if(head == nullptr){
         return nullptr;
     }
-    Node* pNode = head;
+    Node* newNode = head;
     head = head->next;
-    delete pNode;
-    return head;
+    newNode->next = nullptr;
+    return newNode;
 }
 
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     assert(currentNode != nullptr);
     assert(newNode     != nullptr);
-    newNode = new Node();
+    newNode->next = currentNode->next;
     currentNode->next = newNode;
 }
 
 void SinglyLinkedList::dump() const noexcept {
-
+    for(Node* pNode = head; pNode != nullptr; pNode = pNode->next){
+        pNode->Node::dump();
+    }
 }
 
 bool SinglyLinkedList::validate() const noexcept {
-
+    if(head == nullptr){
+        assert(count == 0);
+    }
+    for(Node* pNode = head; pNode != nullptr; pNode = pNode->next) {
+        pNode->Node::validate();
+    }
     return false;
 }
