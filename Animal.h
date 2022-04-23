@@ -27,6 +27,7 @@ public:
     Animal(const Weight::t_weight newMaxWeight,
            const std::string &newClassification,
            const std::string &newSpecies);
+
     Animal(const Gender newGender,
            const Weight::t_weight newWeight,
            const Weight::t_weight newMaxWeight,

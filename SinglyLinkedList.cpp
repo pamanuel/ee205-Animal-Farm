@@ -42,12 +42,10 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
 }
 
 void SinglyLinkedList::dump() const noexcept {
-    FORMAT_LINE_FOR_DUMP("SinglyLinkedList", "this") << this << endl;
+
 }
 
 bool SinglyLinkedList::validate() const noexcept {
-    assert(List::empty());
-    assert(List::size());
-    assert(Node::validate());
+
     return false;
 }

@@ -15,7 +15,6 @@
 class SinglyLinkedList;
 
 class SinglyLinkedList: public List{
-    friend class Node;
 public:
     SinglyLinkedList();
     void push_front(Node *newNode);
