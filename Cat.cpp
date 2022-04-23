@@ -42,11 +42,7 @@ void Cat::fixCat() {
 /// @returns true if everything worked correctly. false if something goes
 /// wrong
 void Cat::dump() const noexcept{
-    assert( validate() ) ;
-    cout << setw(80) << setfill( '=' ) << "" << endl ;
-    cout << setfill( ' ' ) ;
-    cout << left ;
-    cout << boolalpha ;
+    assert( validate() );
     Mammal::dump();
     FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
     FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
@@ -72,18 +68,6 @@ bool Cat::validate() const noexcept {
         return false;
     }
     return true;
-}
-
-Cat::Cat(const string &newName) {
-    validateName(newName);
-    name = newName;
-}
-
-Cat::Cat(const Breed newColor1, const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight){
-    color = newColor1;
-    gender = newGender;
-    weight = newWeight;
-    isfixed = true;
 }
 
 std::string Cat::speak() const noexcept {

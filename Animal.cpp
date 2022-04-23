@@ -19,14 +19,14 @@
 
 using namespace std;
 const string Animal::KINGDOM_NAME = "Animalia";
-Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies) {
+Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies):
+        Node(), weight(newMaxWeight){
     classification = newClassification;
     species = newSpecies;
-
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
-               const string &newClassification, const string &newSpecies) {
+               const string &newClassification, const string &newSpecies):Node(), weight(newWeight, newMaxWeight) {
     gender = newGender;
     weight = newWeight;
     classification = newClassification;
@@ -59,6 +59,7 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 
 void Animal::dump() const noexcept {
     Node::dump();
+    FORMAT_LINE_FOR_DUMP("Animal", "this") << this << endl;
     FORMAT_LINE_FOR_DUMP("Animal", "Kingdom") << getKingdom() << endl;
     FORMAT_LINE_FOR_DUMP("Animal", "Classification") << getClassification() << endl;
     FORMAT_LINE_FOR_DUMP("Animal", "Species") << getSpecies() << endl;

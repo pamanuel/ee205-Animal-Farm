@@ -28,13 +28,28 @@ protected:
 
 public:///constructor and destructor
 
-    Cat(const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName);
+    Cat( const std::string& newName ) : Mammal( MAX_WEIGHT, SPECIES_NAME ) {
+        if( !validateName( newName) ) {
+            throw std::out_of_range( "Cats must have a name" );
+        }
+        name = newName;
+        isfixed = false;
+        Cat::validate();
+    }
+    Cat( const std::string&         newName
+            ,const Color            newColor
+            ,const bool             newIsFixed
+            ,const Gender           newGender
+            ,const Weight::t_weight newWeight
+    ) : Mammal( newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME ) {
+        if( !validateName( newName) ) {
+            throw std::out_of_range( "Cats must have a name" );
+        }
+        name = newName;
+        isfixed = newIsFixed;
 
-    Cat(const Breed newColor1, const Gender newGender1, Weight::t_weight newWeight1,
-        const Weight::t_weight newMaxWeight, const string &newSpecies, const string &newName, const Breed newColor,
-        const bool newisFixed, const Gender newGender, const Weight::t_weight newWeight);
-
-
+        Cat::validate();
+    }
 public:
 ///getters and setters
     std::string getName()const;
