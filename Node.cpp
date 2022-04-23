@@ -16,7 +16,7 @@
 #include "config.h"
 using namespace std;
 
-bool Node::compareByAddress(const Node *node1, const Node *node2) {
+bool Node::compareByAddress(const Node* node1, const Node* node2) {
     if(node1 > node2){
         return true;
     }
@@ -40,5 +40,5 @@ bool Node::validate() const noexcept {
 }
 
 bool Node::operator>(const Node &rightSide) {
-    return compareByAddress(this, &rightSide);
+    return compareByAddress(this, &(Node&)rightSide);
 }

@@ -13,17 +13,16 @@
 #include "SinglyLinkedList.h"
 class Node;
 
-class Node{
+class Node{///friends to access protected members///
     friend class List;
     friend class SinglyLinkedList;
 protected:
-    Node* next = nullptr;
-    static bool compareByAddress(const Node *node1, const Node *node2);
+    Node* next = nullptr;///protected member///
+    static bool compareByAddress(const Node* node1, const Node* node2);///protected method///
 
-public:
+public:///public methods///
     virtual void dump() const;
     virtual bool validate() const noexcept;
     virtual bool operator>(const Node &rightSide);
-
 };
 
