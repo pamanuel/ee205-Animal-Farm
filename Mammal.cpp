@@ -8,26 +8,23 @@
 /// @author @Patrick Manuel <pamanuel@hawaii.edu>
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+#include <iostream>
+#include <iomanip>
 #include "Mammal.h"
+#include "config.h"
+using namespace std;
 
-Mammal::Mammal(const Weight::t_weight newMaxWeight, const string &newSpecies) {
+const string Mammal::MAMMAL_NAME = "Mammalian";
 
+Color Mammal::getColor() const noexcept {
+    return color;
 }
 
-Mammal::Mammal(const Breed newColor, const Gender newGender, Weight::t_weight newWeight,
-               const Weight::t_weight newMaxWeight, const string &newSpecies) {
-
-}
-
-Breed Mammal::getColor() const noexcept {
-    return Breed::MANX;
-}
-
-void Mammal::setColor(const Breed newColor) noexcept {
-
+void Mammal::setColor(const Color newColor) noexcept {
+    color = newColor;
 }
 
 void Mammal::dump() const noexcept {
     Animal::dump();
+    FORMAT_LINE_FOR_DUMP("MAMMAL", "Breed") << color << endl;
 }
