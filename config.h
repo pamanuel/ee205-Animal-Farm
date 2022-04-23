@@ -10,12 +10,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #define PROGRAM_NAME "Animal Farm 1"
+#include <iostream>
 
 /// Format the heading for dumping members of a class to the console
 ///
 /// Print =====================
 #define PRINT_HEADING_FOR_DUMP \
- /* Print =========================================================== */ \
+ /* Print =========================================================== */\
  std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl
 /// Format a line for dumping the members of a class to the console.
 /// Setup the fields for printing (space pad, left justify, etc.)

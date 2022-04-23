@@ -89,10 +89,12 @@ bool Animal::validate() const noexcept {
 
 bool Animal::validateClassification(const string &checkClassification) noexcept {
     assert(checkClassification.empty());
+    return true;
 }
 
 bool Animal::validateSpecies(const string &checkSpecies) noexcept {
     assert(checkSpecies.empty());
+    return true;
 }
 ///protected method
 void Animal::setGender(const Gender newGender) {

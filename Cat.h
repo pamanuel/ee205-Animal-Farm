@@ -9,11 +9,7 @@
 /// @date   09_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-
-#include "catDatabase.h"
-#include "Weight.h"
-#include "Gender.h"
-#include "Color.h"
+#include "config.h"
 #include "Mammal.h"
 class Cat: public Mammal{
 public:
