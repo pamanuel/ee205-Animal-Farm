@@ -40,12 +40,12 @@ bool List::isSorted() const noexcept {
         return true;
     }
     for(Node* pNode = head; pNode->next != nullptr; pNode = pNode->next){
-        if(pNode > pNode->next){
+        if(*pNode > *pNode->next){
             return false;
         }
         return true;
     }
-    return false;
+    return true;
 }
 
 Node *List::get_first() const noexcept {

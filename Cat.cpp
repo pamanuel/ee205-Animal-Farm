@@ -58,6 +58,7 @@ bool Cat::validateName(const string &newName) {
 bool Cat::validate() const noexcept {
     Mammal::validate();
     validateName((getName()));
+    return true;
 }
 
 std::string Cat::speak() const noexcept {

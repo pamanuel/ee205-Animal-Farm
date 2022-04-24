@@ -49,8 +49,9 @@ Node *SinglyLinkedList::pop_front() noexcept {
 ///insert new node after input node
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     assert(validate());
-    assert(isIn(currentNode));
     assert(newNode->validate());
+    assert(isIn(currentNode));
+    assert(!isIn(newNode));
     newNode->next = currentNode->next;
     currentNode->next = newNode;
     count++;
