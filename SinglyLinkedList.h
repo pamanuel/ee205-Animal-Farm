@@ -12,12 +12,13 @@
 #include "Node.h"
 #include "List.h"
 
-class SinglyLinkedList: public List{
-public:
+class SinglyLinkedList: public List {
+public:///constructor///
     SinglyLinkedList();
+public:///public methods///
     void push_front(Node *newNode);
     Node* pop_front() noexcept override;
-    static void insert_after(Node *currentNode, Node *newNode);
+    void insert_after(Node *currentNode, Node *newNode);
     void dump() const noexcept override;
     bool validate() const noexcept override;
 };
