@@ -12,12 +12,13 @@
 #include <iostream>
 #include <iomanip>
 #include <cassert>
+#include <string>
 #include "Cat.h"
 #include "config.h"
 using namespace std;
 
-const string SPECIES_NAME ="Felus Catis";
-const Weight::t_weight MAX_WEIGHT = 40;
+const std::string Cat::SPECIES_NAME ="Felis Catis";
+const Weight::t_weight Cat::MAX_WEIGHT = 40;
 ///constructor
 void Cat::setName(const string& newName) {
     if(validateName(newName)) {///validate usable name
