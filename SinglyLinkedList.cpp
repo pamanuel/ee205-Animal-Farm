@@ -9,7 +9,6 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include <cassert>
-#include <iomanip>
 #include <iostream>
 
 #include "SinglyLinkedList.h"
@@ -22,19 +21,21 @@ SinglyLinkedList::SinglyLinkedList(){
 }
 ///Add node to front of linked list
 void SinglyLinkedList::push_front(Node *newNode) {
-    assert(newNode->validate());
-    if(head == nullptr){
-        newNode = head;
-        newNode->next = nullptr;
-    }
-    else{
+    assert(validate());
+    if(head != nullptr){
         newNode->next = head;
         head = newNode;
     }
+    else{
+        newNode->next = nullptr;
+        head = newNode;
+    }
+    assert(validate());
     count++;
 }
 ///delete first node in linked list
 Node *SinglyLinkedList::pop_front() noexcept {
+    assert(validate());
     if(head == nullptr){
         return nullptr;
     }
@@ -42,30 +43,30 @@ Node *SinglyLinkedList::pop_front() noexcept {
     head = head->next;
     newNode->next = nullptr;
     count--;
+    assert(validate());
     return newNode;
 }
 ///insert new node after input node
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
-    assert(currentNode != nullptr);
-    assert(newNode     != nullptr);
+    assert(validate());
+    assert(isIn(currentNode));
+    assert(newNode->validate());
     newNode->next = currentNode->next;
     currentNode->next = newNode;
     count++;
+    assert(validate());
 }
 
 void SinglyLinkedList::dump() const noexcept {
     cout << "SinglyLinkedList:  head=["<< head <<"]" << endl;
     for(Node* pNode = head; pNode != nullptr; pNode = pNode->next){
-        pNode->Node::dump();
+        pNode->dump();
     }
 }
 
 bool SinglyLinkedList::validate() const noexcept {
-    if(head == nullptr){
-        assert(count == 0);
-    }
     for(Node* pNode = head; pNode != nullptr; pNode = pNode->next) {
         pNode->Node::validate();
     }
-    return false;
+    return true;
 }

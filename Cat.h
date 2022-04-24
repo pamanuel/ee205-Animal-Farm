@@ -43,7 +43,6 @@ public:///constructor and destructor
         }
         name = newName;
         isfixed = newIsFixed;
-
         Cat::validate();
     }
 public:

@@ -9,8 +9,8 @@
 /// @date   20_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
-
-class Node;
+#include <iostream>
+#include "config.h"
 
 class Node{///friends to access protected members///
     friend class List;

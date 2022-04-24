@@ -59,8 +59,8 @@ void List::deleteAllNodes() noexcept {
 }
 
 Node *List::get_next(const Node *currentNode) {
-    if (currentNode->next == nullptr){
-        cout << "No next node" << endl;
+    if (currentNode == nullptr){
+        cout << "Invalid node input" << endl;
     }
     return currentNode->next;
 }

@@ -21,29 +21,20 @@ using namespace std;
 ///constructors///
 const string Animal::KINGDOM_NAME = "Animalia";
 Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies):
-        Node(), weight(newMaxWeight){
-    if(validateClassification(newClassification)&& validateSpecies(newSpecies)){
+        Node(), weight(Weight::POUND, newMaxWeight){
         classification = newClassification;
         species = newSpecies;
         Animal::validate();
     }
-    else{
-        throw invalid_argument("You have an empty input.");
-    }
-}
+
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
                const string &newClassification, const string &newSpecies):Node(), weight(newWeight, newMaxWeight) {
-    if(validateClassification(newClassification)&& validateSpecies(newSpecies)){
         gender = newGender;
         weight.setWeight(newWeight);
         classification = newClassification;
         species = newSpecies;
         Animal::validate();
-    }
-    else{
-        throw invalid_argument("You have an empty input.");
-    }
 }
 ///getters and setters///
 std::string Animal::getClassification() const noexcept {
@@ -71,6 +62,7 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 }
 ///public methods
 void Animal::dump() const noexcept {
+    PRINT_HEADING_FOR_DUMP;
     Node::dump();
     FORMAT_LINE_FOR_DUMP("Animal", "this") << this << endl;
     FORMAT_LINE_FOR_DUMP("Animal", "Kingdom") << getKingdom() << endl;
@@ -88,12 +80,18 @@ bool Animal::validate() const noexcept {
 }
 
 bool Animal::validateClassification(const string &checkClassification) noexcept {
-    assert(checkClassification.empty());
+    if(checkClassification.empty()){
+        cout << "No classification" << endl;
+        return false;
+    }
     return true;
 }
 
 bool Animal::validateSpecies(const string &checkSpecies) noexcept {
-    assert(checkSpecies.empty());
+    if(checkSpecies.empty()){
+        cout << "Species undefined" << endl;
+        return false;
+    }
     return true;
 }
 ///protected method
