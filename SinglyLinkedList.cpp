@@ -39,12 +39,12 @@ Node *SinglyLinkedList::pop_front() noexcept {
     if(head == nullptr){
         return nullptr;
     }
-    Node* newNode = head;
+    Node* deleteNode = head;
     head = head->next;
-    newNode->next = nullptr;
+    deleteNode->next = nullptr;
     count--;
     assert(validate());
-    return newNode;
+    return deleteNode;
 }
 ///insert new node after input node
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {

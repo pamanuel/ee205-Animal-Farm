@@ -43,7 +43,6 @@ void Cat::fixCat() {
 ///end of returning characteristics
 
 void Cat::dump() const noexcept{
-    assert( validate() );
     Mammal::dump();
     FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << getName() << endl ;
     FORMAT_LINE_FOR_DUMP( "Cat", "isFixed" ) << isFixed() << endl ;

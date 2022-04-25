@@ -34,7 +34,7 @@ Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const W
                const string &newClassification, const string &newSpecies):Node(), weight(newWeight, newMaxWeight) {
         assert(validateClassification(newClassification));
         assert(validateSpecies(newSpecies));
-        gender = newGender;
+        setGender(newGender);
         weight.setWeight(newWeight);
         classification = newClassification;
         species = newSpecies;
@@ -62,7 +62,7 @@ Weight::t_weight Animal::getWeight() const noexcept {
 }
 
 void Animal::setWeight(const Weight::t_weight newWeight) {
-    weight = newWeight;
+    weight.setWeight(newWeight);
 }
 ///public methods
 void Animal::dump() const noexcept {
