@@ -16,9 +16,8 @@
 using namespace std;
 
 ///construct SinglyLinkedList
-SinglyLinkedList::SinglyLinkedList(){
-    assert(SinglyLinkedList::validate());
-}
+SinglyLinkedList::SinglyLinkedList(){}
+
 ///Add node to front of linked list
 void SinglyLinkedList::push_front(Node *newNode) {
     assert(validate());
