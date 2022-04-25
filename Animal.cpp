@@ -22,6 +22,8 @@ using namespace std;
 const string Animal::KINGDOM_NAME = "Animalia";
 Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassification, const string &newSpecies):
         Node(), weight(Weight::POUND, newMaxWeight){
+        assert(validateClassification(newClassification));
+        assert(validateSpecies(newSpecies));
         classification = newClassification;
         species = newSpecies;
         Animal::validate();
@@ -30,6 +32,8 @@ Animal::Animal(const Weight::t_weight newMaxWeight, const string &newClassificat
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
                const string &newClassification, const string &newSpecies):Node(), weight(newWeight, newMaxWeight) {
+        assert(validateClassification(newClassification));
+        assert(validateSpecies(newSpecies));
         gender = newGender;
         weight.setWeight(newWeight);
         classification = newClassification;

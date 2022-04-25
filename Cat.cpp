@@ -49,7 +49,7 @@ void Cat::dump() const noexcept{
     FORMAT_LINE_FOR_DUMP( "Cat", "isFixed" ) << isFixed() << endl ;
 }
 bool Cat::validateName(const string &newName) {
-    if (newName.length() <= 0){
+    if (newName.empty()){
         fprintf(stderr,"%s: No name entered",PROGRAM_NAME);
         return false;
     }

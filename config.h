@@ -9,7 +9,7 @@
 /// @date   18_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#define PROGRAM_NAME "Animal Farm 1"
+#define PROGRAM_NAME "Animal Farm 3"
 #include <iostream>
 
 /// Format the heading for dumping members of a class to the console

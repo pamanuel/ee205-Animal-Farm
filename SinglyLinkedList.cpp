@@ -30,8 +30,9 @@ void SinglyLinkedList::push_front(Node *newNode) {
         newNode->next = nullptr;
         head = newNode;
     }
-    assert(validate());
     count++;
+    assert(validate());
+
 }
 ///delete first node in linked list
 Node *SinglyLinkedList::pop_front() noexcept {
@@ -66,6 +67,11 @@ void SinglyLinkedList::dump() const noexcept {
 }
 
 bool SinglyLinkedList::validate() const noexcept {
+    unsigned int counter = 0;
+    for(Node* counterNode = head; counterNode != nullptr; counterNode = counterNode->next){
+        counter++;
+    }
+    assert(counter == count);
     for(Node* pNode = head; pNode != nullptr; pNode = pNode->next) {
         pNode->Node::validate();
     }
