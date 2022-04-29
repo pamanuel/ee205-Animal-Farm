@@ -40,8 +40,14 @@ Node *SinglyLinkedList::pop_front() noexcept {
         return nullptr;
     }
     Node* deleteNode = head;
-    head = head->next;
-    deleteNode->next = nullptr;
+    if(head->next == nullptr){
+        head = nullptr;
+        deleteNode->next = nullptr;
+    }
+    else{
+        head = head->next;
+        deleteNode->next = nullptr;
+    }
     count--;
     assert(validate());
     return deleteNode;
